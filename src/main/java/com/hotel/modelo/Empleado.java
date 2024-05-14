@@ -42,8 +42,12 @@ public class Empleado {
 	@Column(name = "fecha_nacimiento")
 	private long fechaNacimiento;
 
-	@OneToMany(mappedBy = "empleado", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-			CascadeType.REFRESH })
+	@OneToMany(mappedBy = "empleado", cascade = { 
+			CascadeType.PERSIST, 
+			CascadeType.MERGE, 
+			CascadeType.DETACH,
+			CascadeType.REFRESH 
+		})
 	private List<Reserva> reserva;
 
 	public long getId_empleado() {

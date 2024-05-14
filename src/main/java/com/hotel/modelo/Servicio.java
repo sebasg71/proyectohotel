@@ -11,21 +11,24 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "factura")
-public class Factura {
+@Table(name = "servicio")
+public class Servicio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_factura;
+    private long id_servicio;
 
-    @Column(name = "detalle_cobro")
-    private BigDecimal detalleCobro;
+    @Column(name="nombre_servicio")
+	private String nombreServicio;
 
-    @Column(name = "total_cobro")
-    private BigDecimal totalCobro;
+    @Column(name = "precio")
+    private BigDecimal precio;
+
+    @Column(name="detalle")
+	private String detalle;
 
     @ManyToOne
-	@JoinColumn(name = "id_salida")
-	private String idSalida;
+	@JoinColumn(name="id_hospedaje")
+    private Hospedaje idHospedaje;
 
 }
