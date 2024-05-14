@@ -25,12 +25,50 @@ public class Habitacion {
 
 	@ManyToOne
 	@JoinColumn(name = "id_reserva")
-	private Reserva idReserva;
+	private Reserva reserva;
 
 	@ManyToOne
 	@JoinColumn(name = "id_hospedaje")
 	private Hospedaje idHospedaje;
-	
-	
-	
+
+	public long getId_habitacion() {
+		return id_habitacion;
+	}
+
+	public void setId_habitacion(long id_habitacion) {
+		this.id_habitacion = id_habitacion;
+	}
+
+	public String getTipoHabitacion() {
+		return tipoHabitacion;
+	}
+
+	public void setTipoHabitacion(String tipoHabitacion) {
+		this.tipoHabitacion = tipoHabitacion;
+	}
+
+	public int getPiso() {
+		return piso;
+	}
+
+	public void setPiso(int piso) {
+		this.piso = piso;
+	}
+
+	public Reserva getReserva() {
+		return reserva;
+	}
+
+	public void setReserva(Reserva reserva) {
+		this.reserva = reserva;
+	}
+
+	public Hospedaje getIdHospedaje() {
+		return idHospedaje;
+	}
+
+	public void setIdHospedaje(Hospedaje idHospedaje) {
+		this.idHospedaje = idHospedaje;
+	}
+
 }

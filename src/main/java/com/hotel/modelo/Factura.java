@@ -25,7 +25,39 @@ public class Factura {
     private BigDecimal totalCobro;
 
     @ManyToOne
-	@JoinColumn(name = "id_salida")
-	private Salida salida;
+    @JoinColumn(name = "id_salida")
+    private Salida salida;
+
+    public long getId_factura() {
+        return id_factura;
+    }
+
+    public void setId_factura(long id_factura) {
+        this.id_factura = id_factura;
+    }
+
+    public BigDecimal getDetalleCobro() {
+        return detalleCobro;
+    }
+
+    public void setDetalleCobro(BigDecimal detalleCobro) {
+        this.detalleCobro = detalleCobro;
+    }
+
+    public BigDecimal getTotalCobro() {
+        return totalCobro;
+    }
+
+    public void setTotalCobro(BigDecimal totalCobro) {
+        this.totalCobro = totalCobro;
+    }
+
+    public Salida getSalida() {
+        return salida;
+    }
+
+    public void setSalida(Salida salida) {
+        this.salida = salida;
+    }
 
 }
