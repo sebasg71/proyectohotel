@@ -19,7 +19,7 @@ public class Factura {
     private long id_factura;
 
     @Column(name = "detalle_cobro")
-    private BigDecimal detalleCobro;
+    private String detalleCobro;
 
     @Column(name = "total_cobro")
     private BigDecimal totalCobro;
@@ -36,14 +36,6 @@ public class Factura {
         this.id_factura = id_factura;
     }
 
-    public BigDecimal getDetalleCobro() {
-        return detalleCobro;
-    }
-
-    public void setDetalleCobro(BigDecimal detalleCobro) {
-        this.detalleCobro = detalleCobro;
-    }
-
     public BigDecimal getTotalCobro() {
         return totalCobro;
     }
@@ -58,6 +50,14 @@ public class Factura {
 
     public void setSalida(Salida salida) {
         this.salida = salida;
+    }
+
+    public String getDetalleCobro() {
+        return detalleCobro;
+    }
+
+    public void setDetalleCobro(String detalleCobro) {
+        this.detalleCobro = detalleCobro;
     }
 
 }

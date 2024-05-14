@@ -1,5 +1,6 @@
 package com.hotel.modelo;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -33,21 +34,18 @@ public class Empleado {
 	@Column(name = "edad")
 	private int edad;
 
-	@Column(name = "direccion")
-	private String direccion;
-
 	@Column(name = "telefono")
 	private long telefono;
 
 	@Column(name = "fecha_nacimiento")
-	private long fechaNacimiento;
+	private LocalDate fechaNacimiento;
 
-	@OneToMany(mappedBy = "empleado", cascade = { 
-			CascadeType.PERSIST, 
-			CascadeType.MERGE, 
+	@OneToMany(mappedBy = "empleado", cascade = {
+			CascadeType.PERSIST,
+			CascadeType.MERGE,
 			CascadeType.DETACH,
-			CascadeType.REFRESH 
-		})
+			CascadeType.REFRESH
+	})
 	private List<Reserva> reserva;
 
 	public long getId_empleado() {
@@ -98,14 +96,6 @@ public class Empleado {
 		this.edad = edad;
 	}
 
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
 	public long getTelefono() {
 		return telefono;
 	}
@@ -114,12 +104,20 @@ public class Empleado {
 		this.telefono = telefono;
 	}
 
-	public long getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(long fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public List<Reserva> getReserva() {
+		return reserva;
+	}
+
+	public void setReserva(List<Reserva> reserva) {
+		this.reserva = reserva;
 	}
 
 	public List<Reserva> getReservas() {
@@ -129,5 +127,5 @@ public class Empleado {
 	public void setReservas(List<Reserva> reserva) {
 		this.reserva = reserva;
 	}
-	
+
 }
