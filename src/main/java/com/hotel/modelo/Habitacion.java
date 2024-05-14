@@ -25,11 +25,11 @@ public class Habitacion {
 
 	@ManyToOne
 	@JoinColumn(name = "id_reserva")
-	private String idReserva;
+	private Reserva idReserva;
 
 	@ManyToOne
 	@JoinColumn(name = "id_hospedaje")
-	private String idHospedaje;
+	private Hospedaje idHospedaje;
 	
 	
 	

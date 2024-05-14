@@ -29,6 +29,6 @@ public class Servicio {
 
     @ManyToOne
 	@JoinColumn(name="id_hospedaje")
-    private Hospedaje idHospedaje;
+    private Hospedaje hospedaje;
 
 }

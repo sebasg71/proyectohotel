@@ -26,7 +26,7 @@ public class Salida {
 
     @ManyToOne
     @JoinColumn(name = "id_hospedaje")
-    private String idHospedaje;
+    private Hospedaje hospedaje;
 
     @OneToMany(mappedBy="salida", cascade= {
         CascadeType.PERSIST,

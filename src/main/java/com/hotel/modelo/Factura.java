@@ -26,6 +26,6 @@ public class Factura {
 
     @ManyToOne
 	@JoinColumn(name = "id_salida")
-	private String idSalida;
+	private Salida salida;
 
 }
