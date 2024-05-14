@@ -2,7 +2,7 @@ package com.hotel.repositorio;
 
 import org.springframework.data.repository.CrudRepository;
 
-import modelo.entidad.Cliente;
+import com.hotel.modelo.Cliente;
 
 public interface ClienteRepositorio extends CrudRepository<Cliente, Long>{
 
