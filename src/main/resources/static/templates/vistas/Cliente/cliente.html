@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente</title>
+</head>
+<body>
+    
+    <div>
+		<table>
+			<thead>
+		  	<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Primer Nombre</th>
+				<th scope="col">Segundo Nombre</th>
+				<th scope="col">Primer Apellido</th>
+                <th scope="col">Segundo Apellido</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Telefono</th>
+		  	</tr>
+			</thead>
+			<tbody>
+		  		<tr th:each="cliente : ${Cliente}">
+					<td th:text="${cliente.id_cliente}"></td>
+					<td th:text="${cliente.primerNombre}"></td>
+					<td th:text="${cliente.segundoNombre}"></td>
+                    <td th:text="${cliente.primerApellido}"></td>
+                    <td th:text="${cliente.segundoApellido}"></td>
+                    <td th:text="${cliente.direccion}"></td>
+                    <td th:text="${cliente.edad}"></td>
+                    <td th:text="${cliente.genero}"></td>
+                    <td th:text="${cliente.telefono}"></td>
+					<td>
+                        <a>Editar</a>
+                        <a>Eliminar</a>
+                    </td>
+		  		</tr>
+			</tbody>
+	  	</table>
+	</div>
+
+</body>
+</html>
