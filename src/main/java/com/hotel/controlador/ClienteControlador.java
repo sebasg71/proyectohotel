@@ -33,7 +33,7 @@ public class ClienteControlador {
         Cliente cliente = new Cliente();
         modelo.addAttribute("Titulo", "Formulario Nuevo Cliente");
         modelo.addAttribute("Cliente", cliente);
-        return "/vistas/Clientes/";
+        return "/vistas/Cliente/registroCliente";
     }
 
     @PostMapping("/save")
@@ -41,7 +41,7 @@ public class ClienteControlador {
         modelo.addAttribute("Titulo: ", "Formulario: Nuevo Cliente");
         modelo.addAttribute("Cliente", cliente);
         clienteServicio.save(cliente);
-        return "redirect:/vistas/Cliente";
+        return "redirect:/vistas/Cliente/";
 
     }
 

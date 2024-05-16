@@ -2,7 +2,7 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Cliente</title>
+    <title>Clientes</title>
 </head>
 <body>
     
@@ -27,7 +27,7 @@
 					<td th:text="${cliente.primerNombre}"></td>
 					<td th:text="${cliente.segundoNombre}"></td>
                     <td th:text="${cliente.primerApellido}"></td>
-                    <td th:text="${cliente.segundoApellido}"></td>
+					<td th:text="${cliente.segundoApellido}"></td>
                     <td th:text="${cliente.direccion}"></td>
                     <td th:text="${cliente.edad}"></td>
                     <td th:text="${cliente.genero}"></td>
@@ -40,6 +40,6 @@
 			</tbody>
 	  	</table>
 	</div>
-
+    <a th:href="@{/vistas/Cliente/create}"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+		<form th:action="@{/vistas/Cliente/save}" th:object="${Cliente}" method="post">  
+			<div id="popUpContent">
+				<label for="identificacion">Identificación:</label> <br>
+				<input type="text" id="identificacion" th:field="*{id_cliente}" placeholder="Ingrese el Identificador"> 				
+			</div>
+			<div>
+				<label for="primerNombre">Primer Nombre:</label><br> 
+				<input type="text" id="primerNombre" th:field="*{primerNombre}" placeholder="Ingrese el primer Nombre"> 
+			</div>
+            <div>
+				<label for="segundoNombre">Segundo Nombre:</label><br> 
+				<input type="text" id="segundoNombre" th:field="*{segundoNombre}" placeholder="Ingrese el segundo Nombre"> 
+			</div>
+            <div>
+				<label for="primerApellido">Primer Apellido:</label><br> 
+				<input type="text" id="primerApellido" th:field="*{primerApellido}" placeholder="Ingrese el primer Apellido"> 
+			</div>
+            <div>
+				<label for="segundoNombre">Segundo Apellido:</label><br> 
+				<input type="text" id="segundoApellido" th:field="*{segundoApellido}" placeholder="Ingrese el segundo Apellido"> 
+			</div>
+            <div>
+				<label for="direccion">Direccion:</label><br> 
+				<input type="text" id="direccion" th:field="*{direccion}" placeholder="Ingrese la direccion"> 
+			</div>
+            <div>
+				<label for="edad">Edad:</label><br> 
+				<input type="text" id="edad" th:field="*{edad}" placeholder="Ingrese la edad"> 
+			</div>
+            <div>
+				<label for="genero">Genero:</label><br> 
+				<input type="text" id="genero" th:field="*{genero}" placeholder="Ingrese la genero"> 
+			</div>
+            <div>
+				<label for="telefono">Telefono:</label><br> 
+				<input type="text" id="telefono" th:field="*{telefono}" placeholder="Ingrese el Telefono"> 
+			</div>
+			<div>
+				<input type="submit" value="Guardar" id="submit" name="submit"/>
+			</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
