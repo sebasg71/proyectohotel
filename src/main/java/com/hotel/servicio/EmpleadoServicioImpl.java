@@ -1,3 +1,4 @@
+
 package com.hotel.servicio;
 
 import java.util.List;
@@ -9,8 +10,8 @@ public interface EmpleadoServicioImpl {
 
     Empleado save(Empleado usuario);
 
-    Empleado buscarporId(Integer id);
+    Empleado buscarporId(Long id);
 
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }

@@ -26,12 +26,12 @@ public class ServicioService implements ServicioServiceImpl {
     }
 
     @Override
-    public Servicio buscarporId(Integer id) {
+    public Servicio buscarporId(Long id) {
         return serviciorepositorio.findById(id).orElse(null);
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Long id) {
         serviciorepositorio.deleteById(id);
     }
 }

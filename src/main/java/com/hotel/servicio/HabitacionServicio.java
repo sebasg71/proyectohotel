@@ -26,12 +26,12 @@ public class HabitacionServicio implements HabitacionServicioImpl {
     }
 
     @Override
-    public Habitacion buscarporId(Integer id) {
+    public Habitacion buscarporId(Long id) {
         return habitacionrepositorio.findById(id).orElse(null);
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Long id) {
         habitacionrepositorio.deleteById(id);
     }
 }

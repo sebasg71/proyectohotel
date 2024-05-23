@@ -26,12 +26,12 @@ public class ClienteServicio implements ClienteServicioImpl {
     }
 
     @Override
-    public Cliente buscarporId(Integer id) {
+    public Cliente buscarporId(Long id) {
         return clienterepositorio.findById(id).orElse(null);
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Long id) {
         clienterepositorio.deleteById(id);
     }
 }

@@ -26,12 +26,12 @@ public class ReservaServicio implements ReservaServicioImpl {
     }
 
     @Override
-    public Reserva buscarporId(Integer id) {
+    public Reserva buscarporId(Long id) {
         return reservarepositorio.findById(id).orElse(null);
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Long id) {
         reservarepositorio.deleteById(id);
     }
 }

@@ -9,8 +9,8 @@ public interface SalidaServicioImpl {
 
     Salida save(Salida usuario);
 
-    Salida buscarporId(Integer id);
+    Salida buscarporId(Long id);
 
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }

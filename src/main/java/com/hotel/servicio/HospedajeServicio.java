@@ -1,6 +1,7 @@
 package com.hotel.servicio;
 
 import java.util.List;
+import java.util.concurrent.atomic.LongAccumulator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,12 +27,12 @@ public class HospedajeServicio implements HospedajeServicioImpl {
     }
 
     @Override
-    public Hospedaje buscarporId(Integer id) {
+    public Hospedaje buscarporId(Long id) {
         return hospedajerepositorio.findById(id).orElse(null);
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Long id) {
         hospedajerepositorio.deleteById(id);
     }
 }

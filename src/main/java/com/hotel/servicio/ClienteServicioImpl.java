@@ -9,8 +9,8 @@ public interface ClienteServicioImpl {
 
     Cliente save(Cliente usuario);
 
-    Cliente buscarporId(Integer id);
+    Cliente buscarporId(Long id);
 
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }

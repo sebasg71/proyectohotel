@@ -9,8 +9,8 @@ public interface HabitacionServicioImpl {
 
     Habitacion save(Habitacion usuario);
 
-    Habitacion buscarporId(Integer id);
+    Habitacion buscarporId(Long id);
 
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }

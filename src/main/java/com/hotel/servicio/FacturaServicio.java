@@ -26,12 +26,12 @@ public class FacturaServicio implements FacturaServicioImpl {
     }
 
     @Override
-    public Factura buscarporId(Integer id) {
+    public Factura buscarporId(Long id) {
         return facturarepositorio.findById(id).orElse(null);
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Long id) {
         facturarepositorio.deleteById(id);
     }
 }

@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.hotel.modelo.Hospedaje;
 
-public interface HospedajeRepositorio extends CrudRepository<Hospedaje, Integer> {
+public interface HospedajeRepositorio extends CrudRepository<Hospedaje, Long> {
 
 }

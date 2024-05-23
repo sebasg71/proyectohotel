@@ -9,8 +9,8 @@ public interface FacturaServicioImpl {
 
     Factura save(Factura usuario);
 
-    Factura buscarporId(Integer id);
+    Factura buscarporId(Long id);
 
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }
