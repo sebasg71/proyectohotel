@@ -1,11 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/estiloIndex.css}">
+    <title>Inicio</title>
 </head>
 <body>
-    <h4>Inicio</h4>
+    <div class="navBar">
+        <a href="#">
+            <img class="empresaLogo" th:src="@{/Imagenes/hotelLogo.png}">
+        </a>
+        <nav class="menu">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Reservas</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Administracion</a>
+                    <div class="dropdown-content">
+                        <a href="">Empleados</a>
+                        <a href="">Huespedes</a>
+                        <a th:href="@{/vistas/Articulos/}">Articulos</a>
+                    </div>
+                </li>
+                <li><a href="">Servicios</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section>
+        <div class="intro-header">
+            <div class="empresa-header">
+                <img th:src="@{/Imagenes/headerLogo.jpg}">
+                <h3 class="intro-title">Bienvenido</h3>
+                <div class="intro-cont">
+                <p >Lorem ipsum dolor sit amet, consectetur
+                     adipisicing elit. 
+                    Atque consequuntur optio adipisci labore eius similique.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa animi, 
+                    error dolores odit omnis neque aperiam minus provident libero, facilis </p>
+                </div>
+            </div>
+        </div>
+        <div class="info-cont">
+            <div class="info-contenido">
+                <h4 class="info-title">Nuestro Hotel</h4>
+                <div class="nuestro-cont">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Voluptate minus corporis repudiandae sunt dolorem, blanditiis 
+                    aliquid provident repellendus explicabo, sequi distinctio minima 
+                    in maiores officiis non. Unde consequatur dolore et.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quae assumenda nihil tenetur. Amet impedit quaerat repellat animi 
+                    commodi nam. Temporibus consequatur est harum ratione facilis possimus 
+                    nemo dolorum deserunt sit.</p>
+                </div>    
+            </div>
+        </div>
+    </section>
 </body>
 </html>
