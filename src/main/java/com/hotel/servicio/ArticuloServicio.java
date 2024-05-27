@@ -26,12 +26,12 @@ public class ArticuloServicio implements ArticuloServicioImpl {
     }
 
     @Override
-    public Articulo buscarporId(Integer id) {
+    public Articulo buscarporId(Long id) {
         return articulorepositorio.findById(id).orElse(null);
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Long id) {
         articulorepositorio.deleteById(id);
     }
 }
