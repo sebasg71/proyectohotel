@@ -26,12 +26,12 @@ public class SalidaServicio implements SalidaServicioImpl {
     }
 
     @Override
-    public Salida buscarporId(Integer id) {
+    public Salida buscarporId(Long id) {
         return salidarepositorio.findById(id).orElse(null);
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Long id) {
         salidarepositorio.deleteById(id);
     }
 }

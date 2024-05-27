@@ -9,8 +9,8 @@ public interface ReservaServicioImpl {
 
     Reserva save(Reserva usuario);
 
-    Reserva buscarporId(Integer id);
+    Reserva buscarporId(Long id);
 
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }

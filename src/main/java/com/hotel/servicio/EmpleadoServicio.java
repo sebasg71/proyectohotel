@@ -1,3 +1,4 @@
+
 package com.hotel.servicio;
 
 import java.util.List;
@@ -26,12 +27,12 @@ public class EmpleadoServicio implements EmpleadoServicioImpl {
     }
 
     @Override
-    public Empleado buscarporId(Integer id) {
+    public Empleado buscarporId(Long id) {
         return empleadorepositorio.findById(id).orElse(null);
     }
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Long id) {
         empleadorepositorio.deleteById(id);
     }
 }

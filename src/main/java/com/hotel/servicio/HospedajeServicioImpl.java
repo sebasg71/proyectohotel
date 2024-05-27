@@ -9,8 +9,8 @@ public interface HospedajeServicioImpl {
 
     Hospedaje save(Hospedaje usuario);
 
-    Hospedaje buscarporId(Integer id);
+    Hospedaje buscarporId(Long id);
 
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }

@@ -9,8 +9,8 @@ public interface ServicioServiceImpl {
 
     Servicio save(Servicio usuario);
 
-    Servicio buscarporId(Integer id);
+    Servicio buscarporId(Long id);
 
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }
