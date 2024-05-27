@@ -9,8 +9,8 @@ public interface ArticuloServicioImpl {
 
     Articulo save(Articulo usuario);
 
-    Articulo buscarporId(Integer id);
+    Articulo buscarporId(Long id);
 
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,7 +30,7 @@ public class ClienteControlador {
 
     @GetMapping("/create")
     public String crear(Model modelo) {
-        // crear objeto
+
         Cliente cliente = new Cliente();
         modelo.addAttribute("Titulo", "Formulario Nuevo Cliente");
         modelo.addAttribute("Cliente", cliente);
@@ -43,6 +44,43 @@ public class ClienteControlador {
         clienteServicio.save(cliente);
         return "redirect:/vistas/Cliente/";
 
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editar(@PathVariable("id") Long idCliente, Model modelo) {
+
+        Cliente cliente = new Cliente();
+
+        if (idCliente > 0) {
+            cliente = clienteServicio.buscarporId(idCliente);
+            if (cliente == null) {
+                return "redirect:/vistas/Cliente";
+            }
+        } else {
+            return "redirect:/vistas/Cliente";
+        }
+
+        modelo.addAttribute("Titulo", "Formulario: Editar Cliente");
+        modelo.addAttribute("Cliente", cliente);
+        return "/vistas/Cliente/registrarCliente";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String eliminar(@PathVariable("id") Long idCliente, Model modelo) {
+
+        Cliente cliente = new Cliente();
+
+        if (idCliente > 0) {
+            cliente = clienteServicio.buscarporId(idCliente);
+            if (cliente == null) {
+                return "redirect:/vistas/Cliente";
+            }
+        } else {
+            return "redirect:/vistas/Cliente";
+        }
+
+        clienteServicio.eliminar(idCliente);
+        return "redirect:/vistas/Cliente/";
     }
 
 }
