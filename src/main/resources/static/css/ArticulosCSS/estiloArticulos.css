@@ -15,11 +15,19 @@
 }
 
 .empresaLogo {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 55px;
     position: absolute;
-    top: 15px;
-    left: 35px;
+    top: 10px;
+    left: 45px;
+}
+
+.imagenEmpresa img {
+	position: absolute;
+  	left: 590px;
+  	top: 80px;
+  	width: 180px;
+  	height: 200px;
 }
 
 .menu {
@@ -86,22 +94,49 @@ ul {
     display: block;
 }
 /*----------------------------------------------------------------------------------*/
-/*------------BOTON AGREGAR---------------------------*/
+/*------------BOTONES---------------------------*/
 .btnRegistrarForm {
     position: absolute;
-    right: 190px;
+    right: 90px;
     z-index: 800;
     top: 35%;
-    background: #66bb6a;
-	border: 1px solid black;
+    background: #139113;
+	border: none;
 	border-radius: 8px;
 	outline: none;
 	cursor: pointer;
-	font-size: 20px;
-	font-weight: 600; 	
-	color: #04191e;
-    width: 150px;
+	font-size: 20px; 	
+	color: #ffffff;
+    width: 100px;
 	height: 45px;
+}
+
+.btnEditarForm {
+    z-index: 800;
+    top: 35%;
+    background: #1346b6;
+	border: none;
+	border-radius: 8px;
+	outline: none;
+	cursor: pointer;
+	font-size: 17px; 	
+	color: #ffffff;
+    width: 65px;
+	height: 35px;
+}
+
+.btnEliminarForm {
+    z-index: 800;
+    top: 35%;
+    background: #ca0e0e;
+	border: none;
+	border-radius: 8px;
+	outline: none;
+	cursor: pointer;
+	font-size: 17px; 	
+	color: #ffffff;
+    width: 65px;
+	height: 35px;
 }
 
 /*--------------------TABLA DE DATOS----------------*/
@@ -119,14 +154,15 @@ table {
   }
 	
   table th {
-	  border: 1px solid #000000; 
+	  border-top: 2px solid rgb(192, 192, 192); 
 	  padding: 10px; 
 	  text-align: center;
 	  font-size: 18px;
   }
   
   table td {
-	  border: 1px solid #000000; 
+      border-top: 2px solid rgb(192, 192, 192);
+      border-bottom: 2px solid rgb(192, 192, 192);
 	  padding: 2px; 
 	  text-align: center;
 	  font-size: 17px;

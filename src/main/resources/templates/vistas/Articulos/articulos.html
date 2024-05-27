@@ -9,7 +9,7 @@
 <body>
     <div class="navBar">
         <a href="#">
-            <img class="empresaLogo" th:src="@{/Imagenes/hotelLogo.png}">
+            <img class="empresaLogo" th:src="@{/Imagenes/logoHotel.jpg}">
         </a>
         <nav class="menu">
             <ul>
@@ -28,6 +28,10 @@
         </nav>
     </div>
 
+    <div class="imagenEmpresa">
+		<img class="logoEmpresa" th:src="@{/Imagenes/logoHotel.jpg}">
+	</div>
+
     <div class="table-container">
 		<table>
 			<thead>
@@ -35,16 +39,28 @@
                 <th>Codigo</th>
                 <th>Nombre Articulo</th>
                 <th>Cantidad</th>
-                <th>1</th>
-                <th>1</th>
+                <th>Descripcion</th>
+                <th>Numero Habitacion</th>
+                <th>Acciones</th>
 		  	</tr>
 			</thead>
 			<tbody>
 		  		<tr>
 					<td>1</td>
+                    <td>Cama</td>
+                    <td>15</td>
+                    <td>Camas para cada habitacion</td>
+                    <td>201</td>
+                    <td>
+                        <a><button type="submit" class="btnEditarForm" >Editar</button></a>
+                        <a><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
+                    </td>
 		  		</tr>
 			</tbody>
 	  	</table>
 	</div>
+
+    <a><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
+
 </body>
 </html>
