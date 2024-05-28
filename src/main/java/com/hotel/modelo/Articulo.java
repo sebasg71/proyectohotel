@@ -1,5 +1,6 @@
 package com.hotel.modelo;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,12 +23,10 @@ public class Articulo {
 	private int cantidad;
 	@Column(name = "descripcion")
 	private String descripcion;
-	@Column(name = "numero_habitacion")
-	private int numeroHabitacion;
-
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
 	@JoinColumn(name = "id_habitacion")
-	private Articulo articulo;
+	private Habitacion habitacion;
 
 	public long getIdArticulo() {
 		return idArticulo;
@@ -61,12 +60,12 @@ public class Articulo {
 		this.descripcion = descripcion;
 	}
 
-	public int getNumeroHabitacion() {
-		return numeroHabitacion;
+	public Habitacion getHabitacion() {
+		return habitacion;
 	}
 
-	public void setNumeroHabitacion(int numeroHabitacion) {
-		this.numeroHabitacion = numeroHabitacion;
+	public void setHabitacion(Habitacion habitacion) {
+		this.habitacion = habitacion;
 	}
 
 }

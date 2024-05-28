@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/EmpleadosCSS/estiloEmpleado.css}">
+    <title>Hotel</title>
+</head>
+<body>
+
+    <div class="navBar">
+        <a href="#">
+            <img class="empresaLogo" th:src="@{/Imagenes/logoHotel.jpg}">
+        </a>
+        <nav class="menu">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Reservas</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Administracion</a>
+                    <div class="dropdown-content">
+                        <a href="">Empleados</a>
+                        <a href="">Huespedes</a>
+                        <a th:href="@{/vistas/Articulos/}">Articulos</a>
+                    </div>
+                </li>
+                <li><a href="">Servicios</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="imagenEmpresa">
+		<img class="logoEmpresa" th:src="@{/Imagenes/logoHotel.jpg}">
+	</div>
+    
+    <div class="table-container">
+		<table>
+			<thead>
+		  	<tr>
+                <th>Primer Nombre</th>
+                <th>Segundo Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Edad</th>
+                <th>Telefono</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Acciones</th>
+		  	</tr>
+			</thead>
+			<tbody>
+		  		<tr>
+					<td>David</td>
+                    <td>Andres</td>
+                    <td>Ramirez</td>
+                    <td>Perdomo</td>
+                    <td>20</td>
+                    <td>3025566889</td>
+                    <td>2003-01-01</td>
+                    <td>
+                        <a><button type="submit" class="btnEditarForm" >Editar</button></a>
+                        <a><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
+                    </td>
+		  		</tr>
+			</tbody>
+	  	</table>
+	</div>
+    <a><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
+</body>
+</html>

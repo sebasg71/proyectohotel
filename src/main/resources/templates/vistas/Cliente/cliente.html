@@ -2,11 +2,37 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/ClienteCSS/estiloCliente.css}">
     <title>Clientes</title>
 </head>
 <body>
     
-    <div>
+	<div class="navBar">
+        <a href="#">
+            <img class="empresaLogo" th:src="@{/Imagenes/logoHotel.jpg}">
+        </a>
+        <nav class="menu">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Reservas</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Administracion</a>
+                    <div class="dropdown-content">
+                        <a href="">Empleados</a>
+                        <a href="">Huespedes</a>
+                        <a th:href="@{/vistas/Articulos/}">Articulos</a>
+                    </div>
+                </li>
+                <li><a href="">Servicios</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="imagenEmpresa">
+		<img class="logoEmpresa" th:src="@{/Imagenes/logoHotel.jpg}">
+	</div>
+
+    <div class="table-container">
 		<table>
 			<thead>
 		  	<tr>
@@ -19,6 +45,7 @@
                 <th scope="col">Edad</th>
                 <th scope="col">Genero</th>
                 <th scope="col">Telefono</th>
+				<th scope="col">Acciones</th>
 		  	</tr>
 			</thead>
 			<tbody>
@@ -33,8 +60,8 @@
                     <td th:text="${cliente.genero}"></td>
                     <td th:text="${cliente.telefono}"></td>
 					<td>
-                        <a>Editar</a>
-                        <a>Eliminar</a>
+                        <a><button type="submit" class="btnEditarForm" >Editar</button></a>
+                        <a><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
                     </td>
 		  		</tr>
 			</tbody>

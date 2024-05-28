@@ -15,7 +15,7 @@ import com.hotel.modelo.Articulo;
 import com.hotel.servicio.ArticuloServicio;
 
 @Controller
-@RequestMapping("/vistas/Articulo")
+@RequestMapping("/vistas/Articulos")
 public class ArticuloControlador {
 
     @Autowired
@@ -25,7 +25,7 @@ public class ArticuloControlador {
     public String listadoArticulo(Model modelo) {
         List<Articulo> listadoarticulo = articuloservicio.findAll();
         modelo.addAttribute("Articulo", listadoarticulo);
-        return "/vistas/Articulo/articulo";
+        return "/vistas/Articulos/articulos";
     }
 
     @GetMapping("/create")
@@ -34,7 +34,7 @@ public class ArticuloControlador {
         Articulo articulo = new Articulo();
         modelo.addAttribute("Titulo", "Articulo");
         modelo.addAttribute("Articulo", articulo);
-        return "/vistas/Articulo/articulo";
+        return "/vistas/Articulo/registrarArticulo";
     }
 
     @PostMapping("/save")
@@ -53,15 +53,15 @@ public class ArticuloControlador {
         if (idArticulo > 0) {
             articulo = articuloservicio.buscarporId(idArticulo);
             if (articulo == null) {
-                return "redirect:/vistas/Articulo";
+                return "redirect:/vistas/Articulo/";
             }
         } else {
-            return "redirect:/vistas/Articulo";
+            return "redirect:/vistas/Articulo/";
         }
 
         modelo.addAttribute("Titulo", "Formulario: Editar Articulo");
         modelo.addAttribute("Articulo", articulo);
-        return "/vistas/Articulo/registrarCliente";
+        return "/vistas/Articulo/registrarArticulo";
     }
 
     @GetMapping("/delete/{id}")
@@ -72,10 +72,10 @@ public class ArticuloControlador {
         if (idArticulo > 0) {
             articulo = articuloservicio.buscarporId(idArticulo);
             if (articulo == null) {
-                return "redirect:/vistas/Articulo";
+                return "redirect:/vistas/Articulo/";
             }
         } else {
-            return "redirect:/vistas/Articulo";
+            return "redirect:/vistas/Articulo/";
         }
 
         articuloservicio.eliminar(idArticulo);

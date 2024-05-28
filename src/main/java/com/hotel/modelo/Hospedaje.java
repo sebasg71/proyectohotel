@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -39,6 +41,11 @@ public class Hospedaje {
 			CascadeType.REFRESH
 	})
 	private List<Servicio> servicios;
+
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "idReserva")
+	private Reserva reserva;
 
 	public long getId_hospedaje() {
 		return id_hospedaje;
@@ -78,6 +85,14 @@ public class Hospedaje {
 
 	public void setServicios(List<Servicio> servicios) {
 		this.servicios = servicios;
+	}
+
+	public Reserva getReserva() {
+		return reserva;
+	}
+
+	public void setReserva(Reserva reserva) {
+		this.reserva = reserva;
 	}
 
 }

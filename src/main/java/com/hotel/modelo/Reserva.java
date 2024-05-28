@@ -1,6 +1,7 @@
 package com.hotel.modelo;
 
 import java.time.LocalDate;
+
 import java.time.LocalTime;
 import java.util.List;
 
@@ -29,17 +30,24 @@ public class Reserva {
 	@Column(name = "hora_reserva")
 	private LocalTime horaReserva;
 
-	@ManyToOne
-	@JoinColumn(name = "id_cliente")
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
 
-	@ManyToOne
-	@JoinColumn(name = "id_empleado")
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "idEmpleado")
 	private Empleado empleado;
 
-	@OneToMany(mappedBy = "reserva", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-			CascadeType.REFRESH })
-	private List<Habitacion> habitacion;
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "idHabitacion")
+	private Habitacion habitacion;
+
+	@OneToMany(mappedBy = "reserva", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
+	private List<Hospedaje> listaHospedaje;
 
 	public long getId_reserva() {
 		return id_reserva;
@@ -65,6 +73,14 @@ public class Reserva {
 		this.horaReserva = horaReserva;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	public Empleado getEmpleado() {
 		return empleado;
 	}
@@ -73,20 +89,20 @@ public class Reserva {
 		this.empleado = empleado;
 	}
 
-	public List<Habitacion> getHabitacion() {
+	public Habitacion getHabitacion() {
 		return habitacion;
 	}
 
-	public void setHabitacion(List<Habitacion> habitacion) {
+	public void setHabitacion(Habitacion habitacion) {
 		this.habitacion = habitacion;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
+	public List<Hospedaje> getListaHospedaje() {
+		return listaHospedaje;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setListaHospedaje(List<Hospedaje> listaHospedaje) {
+		this.listaHospedaje = listaHospedaje;
 	}
 
 }

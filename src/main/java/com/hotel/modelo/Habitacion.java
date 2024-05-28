@@ -1,13 +1,14 @@
 package com.hotel.modelo;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,23 +16,21 @@ import jakarta.persistence.Table;
 public class Habitacion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_habitacion;
-
+	private Long id_habitacion;
 	@Column(name = "tipo_habitacion")
 	private String tipoHabitacion;
-
 	@Column(name = "piso")
 	private int piso;
+	@Column(name = "numero_habitacion")
+	private int numeroHabitacion;
+	@OneToMany(mappedBy = "habitacion", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
+	private List<Articulo> listaArticulo;
+	@OneToMany(mappedBy = "habitacion", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.DETACH, CascadeType.REFRESH })
+	private List<Reserva> listaReserva;
 
-	@ManyToOne
-	@JoinColumn(name = "id_reserva")
-	private Reserva reserva;
-
-	@ManyToOne
-	@JoinColumn(name = "id_hospedaje")
-	private Hospedaje idHospedaje;
-
-	public long getId_habitacion() {
+	public Long getId_habitacion() {
 		return id_habitacion;
 	}
 
@@ -55,20 +54,32 @@ public class Habitacion {
 		this.piso = piso;
 	}
 
-	public Reserva getReserva() {
-		return reserva;
+	public List<Articulo> getListaArticulo() {
+		return listaArticulo;
 	}
 
-	public void setReserva(Reserva reserva) {
-		this.reserva = reserva;
+	public void setListaArticulo(List<Articulo> listaArticulo) {
+		this.listaArticulo = listaArticulo;
 	}
 
-	public Hospedaje getIdHospedaje() {
-		return idHospedaje;
+	public List<Reserva> getListaReserva() {
+		return listaReserva;
 	}
 
-	public void setIdHospedaje(Hospedaje idHospedaje) {
-		this.idHospedaje = idHospedaje;
+	public void setListaReserva(List<Reserva> listaReserva) {
+		this.listaReserva = listaReserva;
+	}
+
+	public void setId_habitacion(Long id_habitacion) {
+		this.id_habitacion = id_habitacion;
+	}
+
+	public int getNumeroHabitacion() {
+		return numeroHabitacion;
+	}
+
+	public void setNumeroHabitacion(int numeroHabitacion) {
+		this.numeroHabitacion = numeroHabitacion;
 	}
 
 }

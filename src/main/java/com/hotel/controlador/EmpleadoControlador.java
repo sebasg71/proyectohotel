@@ -11,14 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-
 import com.hotel.modelo.Empleado;
 
 import com.hotel.servicio.EmpleadoServicio;
 
 @Controller
-@RequestMapping("/vistas/Empleado")
+@RequestMapping("/vistas/Empleados")
 public class EmpleadoControlador {
     @Autowired
     private EmpleadoServicio empleadoServicio;
@@ -27,7 +25,7 @@ public class EmpleadoControlador {
     public String listadoEmpleado(Model modelo) {
         List<Empleado> listadoEmpleado = empleadoServicio.findAll();
         modelo.addAttribute("Empleado", listadoEmpleado);
-        return "/vistas/Empleado/empleado";
+        return "/vistas/Empleados/empleados";
     }
 
     @GetMapping("/create")
@@ -50,7 +48,7 @@ public class EmpleadoControlador {
     @GetMapping("/edit/{id}")
     public String editar(@PathVariable("id") Long idEmpleado, Model modelo) {
 
-        Empleado  empleado = new Empleado();
+        Empleado empleado = new Empleado();
 
         if (idEmpleado > 0) {
             empleado = empleadoServicio.buscarporId(idEmpleado);
@@ -69,7 +67,7 @@ public class EmpleadoControlador {
     @GetMapping("/delete/{id}")
     public String eliminar(@PathVariable("id") Long idEmpleado, Model modelo) {
 
-        Empleado  empleado = new Empleado();
+        Empleado empleado = new Empleado();
 
         if (idEmpleado > 0) {
             empleado = empleadoServicio.buscarporId(idEmpleado);
@@ -80,7 +78,7 @@ public class EmpleadoControlador {
             return "redirect:/vistas/Empleado";
         }
 
-    empleadoServicio.eliminar(idEmpleado);
+        empleadoServicio.eliminar(idEmpleado);
         return "redirect:/vistas/Empleado/";
     }
 
