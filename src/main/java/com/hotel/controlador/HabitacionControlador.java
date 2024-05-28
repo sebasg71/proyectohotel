@@ -50,12 +50,12 @@ public class HabitacionControlador {
     }
 
     @GetMapping("/edit/{id}")
-    public String editar(@PathVariable("id") Long idhabitacion, Model modelo) {
+    public String editar(@PathVariable("id") Long id_habitacion, Model modelo) {
 
         Habitacion habitacion = new Habitacion();
 
-        if (idhabitacion > 0) {
-            habitacion = habitacionServicio.buscarporId(idhabitacion);
+        if (id_habitacion > 0) {
+            habitacion = habitacionServicio.buscarporId(id_habitacion);
             if (habitacion == null) {
                 return "redirect:/vistas/Habitacion";
             }
@@ -85,5 +85,5 @@ public class HabitacionControlador {
         habitacionServicio.eliminar(id_habitacion);
         return "redirect:/vistas/Habitacion/";
     }
-"holi"
+
 }

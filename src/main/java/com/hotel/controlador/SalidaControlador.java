@@ -17,7 +17,11 @@ import com.hotel.servicio.HospedajeServicio;
 import com.hotel.servicio.SalidaServicio;
 
 @Controller
+<<<<<<< HEAD
 @RequestMapping("/vistas/Salidas")
+=======
+@RequestMapping("/vistas/Salida")
+>>>>>>> 20457c6d06bafcd3194eb9148745dc6371cccba3
 public class SalidaControlador {
 
     @Autowired

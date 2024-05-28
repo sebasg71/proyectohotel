@@ -24,11 +24,6 @@ public class ArticuloControlador {
     private ArticuloServicio articuloservicio;
     private HabitacionServicio habitacionServicio;
 
-    public ArticuloControlador(ArticuloServicio articuloServicio, HabitacionServicio habitacionServicio) {
-        this.articuloservicio = articuloServicio;
-        this.habitacionServicio = habitacionServicio;
-    }
-
     @GetMapping("/")
     public String listadoArticulo(Model modelo) {
         List<Articulo> listadoarticulo = articuloservicio.findAll();
@@ -45,7 +40,7 @@ public class ArticuloControlador {
         modelo.addAttribute("Titulo", "Articulo");
         modelo.addAttribute("Habitacion", habitacion);
         modelo.addAttribute("Articulo", articulo);
-        return "/vistas/Articulos/registroArticulos";
+        return "/vistas/Articulo/registrarArticulo";
     }
 
     @PostMapping("/save")

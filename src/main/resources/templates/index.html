@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/estiloIndex.css}">
     <title>Inicio</title>
 </head>
+
 <body>
 	<div class="navBar">
         <a href="#">
@@ -16,12 +18,17 @@
                 <li><a th:href="@{/}">Inicio</a></li>
                 <li><a th:href="@{/vistas/Reserva/}">Reservas</a></li>
                 <li class="dropdown">
-                    <a href="" class="dropbtn">Administracion</a>
+                    <a href="" class="dropbtn">Administración</a>
                     <div class="dropdown-content">
                         <a th:href="@{/vistas/Empleados/}">Empleados</a>
+<<<<<<< HEAD
                         <a th:href="@{/vistas/Cliente/}">Huespedes</a>
                         <a th:href="@{/vistas/Articulos/}">Articulos</a>
                         <a th:href="@{/vistas/Habitaciones/}">Habitaciones</a>
+=======
+                        <a th:href="@{/vistas/Cliente/}">Huéspedes</a>
+                        <a th:href="@{/vistas/Articulos/}">Artículos</a>
+>>>>>>> 20457c6d06bafcd3194eb9148745dc6371cccba3
                     </div>
                 </li>
                 <li><a th:href="@{/vistas/Servicios/}">Servicios</a></li>
@@ -29,18 +36,17 @@
             </ul>
         </nav>
     </div>
-    
+
     <section>
         <div class="intro-header">
             <div class="empresa-header">
                 <img th:src="@{/Imagenes/headerLogo.jpg}">
-                <h3 class="intro-title">Bienvenido</h3>
+                <h3 class="intro-title">¡Bienvenidos!</h3>
                 <div class="intro-cont">
-                <p >Lorem ipsum dolor sit amet, consectetur
-                     adipisicing elit. 
-                    Atque consequuntur optio adipisci labore eius similique.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa animi, 
-                    error dolores odit omnis neque aperiam minus provident libero, facilis </p>
+                    <p>Estamos encantados de recibirles en nuestro oasis frente al mar, donde la belleza natural y el
+                        confort se unen para ofrecerles una experiencia inolvidable. Desde el momento en que cruzan
+                        nuestras puertas, nuestro dedicado equipo estará a su disposición para asegurarse de que su
+                        estancia sea perfecta en todos los sentidos.</p>
                 </div>
             </div>
         </div>
@@ -48,17 +54,20 @@
             <div class="info-contenido">
                 <h4 class="info-title">Nuestro Hotel</h4>
                 <div class="nuestro-cont">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                    Voluptate minus corporis repudiandae sunt dolorem, blanditiis 
-                    aliquid provident repellendus explicabo, sequi distinctio minima 
-                    in maiores officiis non. Unde consequatur dolore et.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Quae assumenda nihil tenetur. Amet impedit quaerat repellat animi 
-                    commodi nam. Temporibus consequatur est harum ratione facilis possimus 
-                    nemo dolorum deserunt sit.</p>
-                </div>    
+                    <p>Nuestro hotel ofrece una variedad de servicios de primera clase, incluyendo habitaciones con
+                        vistas panorámicas, deliciosas opciones gastronómicas en nuestro restaurante gourmet, y una
+                        amplia gama de actividades recreativas para todas las edades. Disfruten de un refrescante baño
+                        en nuestra piscina infinita, relájense con un masaje en nuestro spa, o exploren las maravillas
+                        naturales de los alrededores con nuestras excursiones guiadas. Cada rincón de Mar Azul está
+                        diseñado para proporcionarles el máximo confort y tranquilidad. Nos esforzamos por crear un
+                        ambiente acogedor y hospitalario, donde cada detalle está pensado para su bienestar. Gracias por
+                        elegir el Hotel Mar Azul para su estancia. Estamos seguros de que vivirán momentos inolvidables
+                        y esperamos que su tiempo con nosotros sea tan maravilloso como el océano que nos rodea.
+                        ¡Disfruten de su estancia!</p>
+                </div>
             </div>
         </div>
     </section>
 </body>
+
 </html>
