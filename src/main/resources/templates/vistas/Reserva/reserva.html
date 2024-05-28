@@ -24,7 +24,7 @@
                         <a th:href="@{/vistas/Habitaciones/}">Habitaciones</a>
                     </div>
                 </li>
-                <li><a th:href="@{/vistas/Servicios/}">Servicios</a></li>
+                <li><a th:href="@{/vistas/Salida/}">Salida</a></li>
                 <li><a th:href="@{/vistas/Hospedaje/}">Hospedaje</a></li>
             </ul>
         </nav>
@@ -56,8 +56,8 @@
                     <td th:text="${reservas.empleado.primerNombre}"></td>
                     <td th:text="${reservas.habitacion.numeroHabitacion}"></td>
                     <td>
-                        <a><button type="submit" class="btnEditarForm" >Editar</button></a>
-                        <a><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
+                        <a th:href="@{/vistas/Reserva/edit/} + ${reservas.id_reserva}"><button type="submit" class="btnEditarForm" >Editar</button></a>
+                        <a th:href="@{/vistas/Reserva/delete/} + ${reservas.id_reserva}"><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
                     </td>
 		  		</tr>
 			</tbody>

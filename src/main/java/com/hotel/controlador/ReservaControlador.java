@@ -87,7 +87,7 @@ public class ReservaControlador {
 
         modelo.addAttribute("Titulo", "Formulario: Reserva");
         modelo.addAttribute("Reserva", reserva);
-        return "/vistas/Articulo/reserva";
+        return "/vistas/Reserva/registrarReserva";
     }
 
     @GetMapping("/delete/{id}")
