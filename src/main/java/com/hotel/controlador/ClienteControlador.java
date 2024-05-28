@@ -54,15 +54,15 @@ public class ClienteControlador {
         if (idCliente > 0) {
             cliente = clienteServicio.buscarporId(idCliente);
             if (cliente == null) {
-                return "redirect:/vistas/Cliente";
+                return "redirect:/vistas/Cliente/";
             }
         } else {
-            return "redirect:/vistas/Cliente";
+            return "redirect:/vistas/Cliente/";
         }
 
         modelo.addAttribute("Titulo", "Formulario: Editar Cliente");
         modelo.addAttribute("Cliente", cliente);
-        return "/vistas/Cliente/registrarCliente";
+        return "/vistas/Cliente/registroCliente";
     }
 
     @GetMapping("/delete/{id}")

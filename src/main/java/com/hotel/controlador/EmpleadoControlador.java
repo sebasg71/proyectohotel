@@ -33,7 +33,7 @@ public class EmpleadoControlador {
         Empleado empleado = new Empleado();
         modelo.addAttribute("Titulo", "empleado");
         modelo.addAttribute("Empleado", empleado);
-        return "/vistas/Empleado/empleado";
+        return "/vistas/Empleados/registroEmpleado";
     }
 
     @PostMapping("/save")
@@ -41,7 +41,7 @@ public class EmpleadoControlador {
         modelo.addAttribute("Titulo: ", "empleado");
         modelo.addAttribute("Empleado", empleado);
         empleadoServicio.save(empleado);
-        return "redirect:/vistas/Empleado/";
+        return "redirect:/vistas/Empleados/";
 
     }
 
@@ -53,15 +53,15 @@ public class EmpleadoControlador {
         if (idEmpleado > 0) {
             empleado = empleadoServicio.buscarporId(idEmpleado);
             if (empleado == null) {
-                return "redirect:/vistas/Empleado";
+                return "redirect:/vistas/Empleados/";
             }
         } else {
-            return "redirect:/vistas/Empleado";
+            return "redirect:/vistas/Empleados/";
         }
 
         modelo.addAttribute("Titulo", " Gestion:empleado");
         modelo.addAttribute("Empleado", empleado);
-        return "/vistas/Empleado/GestionarEmpleado";
+        return "/vistas/Empleados/registroEmpleado";
     }
 
     @GetMapping("/delete/{id}")
@@ -72,14 +72,14 @@ public class EmpleadoControlador {
         if (idEmpleado > 0) {
             empleado = empleadoServicio.buscarporId(idEmpleado);
             if (empleado == null) {
-                return "redirect:/vistas/Empleado";
+                return "redirect:/vistas/Empleados/";
             }
         } else {
-            return "redirect:/vistas/Empleado";
+            return "redirect:/vistas/Empleados/";
         }
 
         empleadoServicio.eliminar(idEmpleado);
-        return "redirect:/vistas/Empleado/";
+        return "redirect:/vistas/Empleados/";
     }
 
 }

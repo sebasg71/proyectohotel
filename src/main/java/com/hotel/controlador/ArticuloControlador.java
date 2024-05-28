@@ -34,7 +34,7 @@ public class ArticuloControlador {
         Articulo articulo = new Articulo();
         modelo.addAttribute("Titulo", "Articulo");
         modelo.addAttribute("Articulo", articulo);
-        return "/vistas/Articulo/registrarArticulo";
+        return "/vistas/Articulos/registroArticulos";
     }
 
     @PostMapping("/save")
@@ -42,7 +42,7 @@ public class ArticuloControlador {
         modelo.addAttribute("Titulo: ", "Articulo");
         modelo.addAttribute("Articulo", articulo);
         articuloservicio.save(articulo);
-        return "redirect:/vistas/Articulo/";
+        return "redirect:/vistas/Articulos/";
     }
 
     @GetMapping("/edit/{id}")
@@ -53,15 +53,15 @@ public class ArticuloControlador {
         if (idArticulo > 0) {
             articulo = articuloservicio.buscarporId(idArticulo);
             if (articulo == null) {
-                return "redirect:/vistas/Articulo/";
+                return "redirect:/vistas/Articulos/";
             }
         } else {
-            return "redirect:/vistas/Articulo/";
+            return "redirect:/vistas/Articulos/";
         }
 
         modelo.addAttribute("Titulo", "Formulario: Editar Articulo");
         modelo.addAttribute("Articulo", articulo);
-        return "/vistas/Articulo/registrarArticulo";
+        return "/vistas/Articulo/articulos";
     }
 
     @GetMapping("/delete/{id}")
@@ -72,14 +72,14 @@ public class ArticuloControlador {
         if (idArticulo > 0) {
             articulo = articuloservicio.buscarporId(idArticulo);
             if (articulo == null) {
-                return "redirect:/vistas/Articulo/";
+                return "redirect:/vistas/Articulos/";
             }
         } else {
-            return "redirect:/vistas/Articulo/";
+            return "redirect:/vistas/Articulos/";
         }
 
         articuloservicio.eliminar(idArticulo);
-        return "redirect:/vistas/Articulo/";
+        return "redirect:/vistas/Articulos/";
     }
 
 }
