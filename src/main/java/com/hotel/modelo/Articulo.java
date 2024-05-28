@@ -16,7 +16,7 @@ public class Articulo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_articulo")
-	private long idArticulo;
+	private Long idArticulo;
 	@Column(name = "nombre_articulo")
 	private String nombreArticulo;
 	@Column(name = "cantidad")
@@ -28,11 +28,11 @@ public class Articulo {
 	@JoinColumn(name = "id_habitacion")
 	private Habitacion habitacion;
 
-	public long getIdArticulo() {
+	public Long getIdArticulo() {
 		return idArticulo;
 	}
 
-	public void setIdArticulo(long idArticulo) {
+	public void setIdArticulo(Long idArticulo) {
 		this.idArticulo = idArticulo;
 	}
 
