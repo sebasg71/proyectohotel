@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/ArticulosCSS/estiloRegArticulos.css}">
+    <title>Cliente</title>
+</head>
+<body>
+    <div>
+		<form th:action="@{/vistas/Articulos/save}" th:object="${Articulo}" method="post">  
+			<h2 class="title">Registrar Articulo</h2>
+			<div>
+				<input class="inputTree" type="text" id="identificacion" th:field="*{idArticulo}" placeholder="Identificador"> 				
+			</div>
+			<div>
+				<input class="inputTwo" type="text" id="nombreArticulo" th:field="*{nombreArticulo}" placeholder="Nombre Articulo"> 
+			</div>
+            <div>
+				<input class="inputOne" type="text" id="cantidad" th:field="*{cantidad}" placeholder="Cantidad"> 
+			</div>
+            <div>
+				<input class="inputTwo" type="text" id="descripcion" th:field="*{descripcion}" placeholder="Descripcion"> 
+			</div>
+            <div>
+                <select name="usuario" class="Select">
+                    <option >Habitacion:</option>
+                    <option th:each="habitacion : ${Habitacion}" th:value="${habitacion.id_habitacion}" th:text="${habitacion.numeroHabitacion} +   ${habitacion.tipoHabitacion}"></option-->
+                </select>
+                </div>
+			<div>
+				<input class="btnSave" type="submit" value="Guardar" id="submit" name="submit"/>
+			</div>
+			<div>
+				<a th:href="@{/vistas/Articulos/}" class="btnCancel">Cancelar</a>
+			</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

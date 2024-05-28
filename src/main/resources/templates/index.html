@@ -7,23 +7,25 @@
     <title>Inicio</title>
 </head>
 <body>
-    <div class="navBar">
+	<div class="navBar">
         <a href="#">
             <img class="empresaLogo" th:src="@{/Imagenes/logoHotel.jpg}">
         </a>
         <nav class="menu">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Reservas</a></li>
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/vistas/Reserva/}">Reservas</a></li>
                 <li class="dropdown">
                     <a href="" class="dropbtn">Administracion</a>
                     <div class="dropdown-content">
                         <a th:href="@{/vistas/Empleados/}">Empleados</a>
                         <a th:href="@{/vistas/Cliente/}">Huespedes</a>
                         <a th:href="@{/vistas/Articulos/}">Articulos</a>
+                        <a th:href="@{/vistas/Habitaciones/}">Habitaciones</a>
                     </div>
                 </li>
-                <li><a href="">Servicios</a></li>
+                <li><a th:href="@{/vistas/Servicios/}">Servicios</a></li>
+                <li><a th:href="@{/vistas/Hospedaje/}">Hospedaje</a></li>
             </ul>
         </nav>
     </div>

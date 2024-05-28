@@ -17,19 +17,23 @@ import com.hotel.servicio.ArticuloServicio;
 import com.hotel.servicio.HabitacionServicio;
 
 @Controller
-@RequestMapping("/vistas/Articulo")
+@RequestMapping("/vistas/Articulos")
 public class ArticuloControlador {
 
     @Autowired
     private ArticuloServicio articuloservicio;
     private HabitacionServicio habitacionServicio;
-    
+
+    public ArticuloControlador(ArticuloServicio articuloServicio, HabitacionServicio habitacionServicio) {
+        this.articuloservicio = articuloServicio;
+        this.habitacionServicio = habitacionServicio;
+    }
 
     @GetMapping("/")
     public String listadoArticulo(Model modelo) {
         List<Articulo> listadoarticulo = articuloservicio.findAll();
         modelo.addAttribute("Articulo", listadoarticulo);
-        return "/vistas/Articulo/articulo";
+        return "/vistas/Articulos/articulos";
     }
 
     @GetMapping("/create")
@@ -39,9 +43,9 @@ public class ArticuloControlador {
 
         Iterable<Habitacion> habitacion = habitacionServicio.findAll();
         modelo.addAttribute("Titulo", "Articulo");
-
+        modelo.addAttribute("Habitacion", habitacion);
         modelo.addAttribute("Articulo", articulo);
-        return "/vistas/Articulo/registrarArticulo";
+        return "/vistas/Articulos/registroArticulos";
     }
 
     @PostMapping("/save")
@@ -60,15 +64,15 @@ public class ArticuloControlador {
         if (idArticulo > 0) {
             articulo = articuloservicio.buscarporId(idArticulo);
             if (articulo == null) {
-                return "redirect:/vistas/Articulo/";
+                return "redirect:/vistas/Articulos/";
             }
         } else {
-            return "redirect:/vistas/Articulo/";
+            return "redirect:/vistas/Articulos/";
         }
 
         modelo.addAttribute("Titulo", "Formulario: Editar Articulo");
         modelo.addAttribute("Articulo", articulo);
-        return "/vistas/Articulo/registrarArticulo";
+        return "/vistas/Articulos/registroArticulos";
     }
 
     @GetMapping("/delete/{id}")
@@ -79,10 +83,10 @@ public class ArticuloControlador {
         if (idArticulo > 0) {
             articulo = articuloservicio.buscarporId(idArticulo);
             if (articulo == null) {
-                return "redirect:/vistas/Articulo/";
+                return "redirect:/vistas/Articulos/";
             }
         } else {
-            return "redirect:/vistas/Articulo/";
+            return "redirect:/vistas/Articulos/";
         }
 
         articuloservicio.eliminar(idArticulo);

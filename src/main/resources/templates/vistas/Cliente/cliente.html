@@ -13,17 +13,19 @@
         </a>
         <nav class="menu">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Reservas</a></li>
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/vistas/Reserva/}">Reservas</a></li>
                 <li class="dropdown">
                     <a href="" class="dropbtn">Administracion</a>
                     <div class="dropdown-content">
-                        <a href="">Empleados</a>
-                        <a href="">Huespedes</a>
+                        <a th:href="@{/vistas/Empleados/}">Empleados</a>
+                        <a th:href="@{/vistas/Cliente/}">Huespedes</a>
                         <a th:href="@{/vistas/Articulos/}">Articulos</a>
+                        <a th:href="@{/vistas/Habitaciones/}">Habitaciones</a>
                     </div>
                 </li>
-                <li><a href="">Servicios</a></li>
+                <li><a th:href="@{/vistas/Servicios/}">Servicios</a></li>
+                <li><a th:href="@{/vistas/Hospedaje/}">Hospedaje</a></li>
             </ul>
         </nav>
     </div>
@@ -60,8 +62,8 @@
                     <td th:text="${cliente.genero}"></td>
                     <td th:text="${cliente.telefono}"></td>
 					<td>
-                        <a><button type="submit" class="btnEditarForm" >Editar</button></a>
-                        <a><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
+                        <a th:href="@{/vistas/Cliente/edit/} + ${cliente.id_cliente}"><button type="submit" class="btnEditarForm" >Editar</button></a>
+                        <a th:href="@{/vistas/Cliente/delete/} + ${cliente.id_cliente}"><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
                     </td>
 		  		</tr>
 			</tbody>

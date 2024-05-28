@@ -22,7 +22,7 @@ import jakarta.persistence.Table;
 public class Reserva {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_reserva;
+	private Long id_reserva;
 
 	@Column(name = "fecha_reserva")
 	private LocalDate fechaReserva;
@@ -49,11 +49,11 @@ public class Reserva {
 			CascadeType.DETACH, CascadeType.REFRESH })
 	private List<Hospedaje> listaHospedaje;
 
-	public long getId_reserva() {
+	public Long getId_reserva() {
 		return id_reserva;
 	}
 
-	public void setId_reserva(long id_reserva) {
+	public void setId_reserva(Long id_reserva) {
 		this.id_reserva = id_reserva;
 	}
 

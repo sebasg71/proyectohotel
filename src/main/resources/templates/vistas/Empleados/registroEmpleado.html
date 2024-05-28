@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-	<link rel="stylesheet" th:href="@{/css/ClienteCSS/estiloRegCliente.css}">
+	<link rel="stylesheet" th:href="@{/css/EmpleadosCSS/estiloRegEmpleado.css}">
     <title>Cliente</title>
 </head>
 <body>
     <div>
-		<form th:action="@{/vistas/Cliente/save}" th:object="${Cliente}" method="post">  
-			<h2 class="title">Registrar Huesped</h2>
+		<form th:action="@{/vistas/Empleados/save}" th:object="${Empleado}" method="post">  
+			<h2 class="title">Registrar Empleado</h2>
 			<div>
-				<input class="inputTree" type="text" id="identificacion" th:field="*{id_cliente}" placeholder="Identificador"> 				
+				<input class="inputTree" type="text" id="identificacion" th:field="*{id_empleado}" placeholder="Identificador"> 				
 			</div>
 			<div>
 				<input class="inputTwo" type="text" id="primerNombre" th:field="*{primerNombre}" placeholder="Primer Nombre"> 
@@ -25,22 +25,19 @@
 				<input class="inputOne" type="text" id="segundoApellido" th:field="*{segundoApellido}" placeholder="Segundo Apellido"> 
 			</div>
             <div>
-				<input class="inputTwo" type="text" id="direccion" th:field="*{direccion}" placeholder="Direccion"> 
+				<input class="inputTwo" type="text" id="direccion" th:field="*{edad}" placeholder="Edad"> 
 			</div>
             <div>
-				<input class="inputOne" type="text" id="edad" th:field="*{edad}" placeholder="Edad"> 
+				<input class="inputOne" type="text" id="edad" th:field="*{telefono}" placeholder="Telefono"> 
 			</div>
             <div>
-				<input class="inputTwo" type="text" id="genero" th:field="*{genero}" placeholder="Genero"> 
-			</div>
-            <div>
-				<input class="inputOne" type="text" id="telefono" th:field="*{telefono}" placeholder="Telefono"> 
+				<input class="inputTree2" type="date" id="genero" th:field="*{fechaNacimiento}" placeholder="Genero"> 
 			</div>
 			<div>
 				<input class="btnSave" type="submit" value="Guardar" id="submit" name="submit"/>
 			</div>
 			<div>
-				<a th:href="@{/vistas/Cliente/}" class="btnCancel">Cancelar</a>
+				<a th:href="@{/vistas/Empleados/}" class="btnCancel">Cancelar</a>
 			</div>
 			</div>
 		</form>

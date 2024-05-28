@@ -20,9 +20,9 @@ form {
 .inputOne {
     padding: 15px;
     position: relative;
-    left: 370px;
+    left: 360px;
     width: 150px;
-    top: 20px;
+    top: 105px;
     border: 1px solid black;
     border-radius: 4px;
     font-size: 18px;
@@ -45,8 +45,8 @@ form {
     margin: -10px;
     position: relative;
     width: 150px;
-    left: 228px;
-    top: 15px;
+    left: 370px;
+    top: 90px;
     border: 1px solid black;
     border-radius: 4px;
     font-size: 16px;
@@ -60,7 +60,7 @@ input::placeholder {
 .btnSave {
     z-index: 800;
     position: relative;
-    top: 50px;
+    top: 100px;
     left: 160px;
     background: #1346b6;
 	border: none;
@@ -76,7 +76,7 @@ input::placeholder {
 .btnCancel {
     z-index: 800;
     position: relative;
-    top: 17px;
+    top: 70px;
     left: 360px;
     background: #ca0e0e;
 	border: none;

@@ -27,6 +27,16 @@ form {
     border-radius: 4px;
     font-size: 18px;
 }
+.Select {
+    padding: 13px;
+    position: relative;
+    left: 370px;
+    width: 183px;
+    top: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+}
 
 .inputTwo {
     padding: 15px;

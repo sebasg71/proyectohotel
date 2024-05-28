@@ -34,7 +34,7 @@ public class Habitacion {
 		return id_habitacion;
 	}
 
-	public void setId_habitacion(long id_habitacion) {
+	public void setId_habitacion(Long id_habitacion) {
 		this.id_habitacion = id_habitacion;
 	}
 
@@ -68,10 +68,6 @@ public class Habitacion {
 
 	public void setListaReserva(List<Reserva> listaReserva) {
 		this.listaReserva = listaReserva;
-	}
-
-	public void setId_habitacion(Long id_habitacion) {
-		this.id_habitacion = id_habitacion;
 	}
 
 	public int getNumeroHabitacion() {

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/ArticulosCSS/estiloArticulos.css}">
+    <link rel="stylesheet" th:href="@{/css/ClienteCSS/estiloCliente.css}">
     <title>Hotel</title>
 </head>
 <body>
-	<div class="navBar">
+
+    <div class="navBar">
         <a href="#">
             <img class="empresaLogo" th:src="@{/Imagenes/logoHotel.jpg}">
         </a>
@@ -33,34 +34,33 @@
     <div class="imagenEmpresa">
 		<img class="logoEmpresa" th:src="@{/Imagenes/logoHotel.jpg}">
 	</div>
-
     <div class="table-container">
 		<table>
 			<thead>
 		  	<tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nombre Articulo</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Descripcion</th>
+				<th scope="col">Id</th>
+				<th scope="col">Numero Habitacion</th>
+				<th scope="col">Tipo Habitacion</th>
+				<th scope="col">Piso</th>
                 <th scope="col">Acciones</th>
 		  	</tr>
 			</thead>
 			<tbody>
-		  		<tr th:each="articulos : ${Articulo}">
-					<td th:text="${articulos.idArticulo}"></td>
-                    <td th:text="${articulos.nombreArticulo}"></td>
-                    <td th:text="${articulos.cantidad}"></td>
-                    <td th:text="${articulos.descripcion}"></td>
-                    <td>
-                        <a th:href="@{/vistas/Articulos/edit/} + ${articulos.idArticulo}"><button type="submit" class="btnEditarForm" >Editar</button></a>
-                        <a th:href="@{/vistas/Articulos/delete/} + ${articulos.idArticulo}"><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
+		  		<tr th:each="habitaciones : ${Habitacion}">
+					<td th:text="${habitaciones.id_habitacion}"></td>
+					<td th:text="${habitaciones.numeroHabitacion}"></td>
+					<td th:text="${habitaciones.tipoHabitacion}"></td>
+                    <td th:text="${habitaciones.piso}"></td>
+					<td>
+                        <a th:href="@{/vistas/Habitaciones/edit/} + ${habitaciones.id_habitacion}"><button type="submit" class="btnEditarForm" >Editar</button></a>
+                        <a th:href="@{/vistas/Habitaciones/delete/} + ${habitaciones.id_habitacion}"><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
                     </td>
 		  		</tr>
 			</tbody>
 	  	</table>
 	</div>
-
-    <a th:href="@{/vistas/Articulos/create}"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
-
+    <a th:href="@{/vistas/Habitaciones/create}"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
+</body>
+    
 </body>
 </html>

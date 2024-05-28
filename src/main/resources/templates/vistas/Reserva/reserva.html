@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/EmpleadosCSS/estiloEmpleado.css}">
+    <link rel="stylesheet" th:href="@{/css/ReservaCSS/estiloReserva.css}">
     <title>Hotel</title>
 </head>
 <body>
 
+    
 	<div class="navBar">
         <a href="#">
             <img class="empresaLogo" th:src="@{/Imagenes/logoHotel.jpg}">
@@ -40,34 +41,30 @@
 			<thead>
 		  	<tr>
                 <th scope="col">Id</th>
-                <th scope="col">Primer Nombre</th>
-                <th scope="col">Segundo Nombre</th>
-                <th scope="col">Primer Apellido</th>
-                <th scope="col">Segundo Apellido</th>
-                <th scope="col">Edad</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Fecha de Nacimiento</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Nombre Cliente</th>
+                <th scope="col">Nombre Empleado</th>
+                <th scope="col">Habitacion</th>
                 <th scope="col">Acciones</th>
 		  	</tr>
 			</thead>
 			<tbody>
-		  		<tr th:each="empleados : ${Empleado}">
-					<td th:text="${empleados.id_empleado}"></td>
-                    <td th:text="${empleados.primerNombre}"></td>
-                    <td th:text="${empleados.segundoNombre}"></td>
-                    <td th:text="${empleados.primerApellido}"></td>
-                    <td th:text="${empleados.segundoApellido}"></td>
-                    <td th:text="${empleados.edad}"></td>
-                    <td th:text="${empleados.telefono}"></td>
-                    <td th:text="${empleados.fechaNacimiento}"></td>
+		  		<tr th:each="reservas : ${Reserva}">
+					<td th:text="${reservas.id_reserva}"></td>
+                    <td th:text="${reservas.fechaReserva}"></td>
+                    <td th:text="${reservas.horaReserva}"></td>
+                    <td th:text="${reservas.cliente.primerNombre}"></td>
+                    <td th:text="${reservas.empleado.primerNombre}"></td>
+                    <!--td th:text="${reservas.habitacion.numeroHabitacion}"></td-->
                     <td>
-                        <a th:href="@{/vistas/Empleados/edit/} + ${empleados.id_empleado}"><button type="submit" class="btnEditarForm" >Editar</button></a>
-                        <a th:href="@{/vistas/Empleados/delete/} + ${empleados.id_empleado}"><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
+                        <a><button type="submit" class="btnEditarForm" >Editar</button></a>
+                        <a><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
                     </td>
 		  		</tr>
 			</tbody>
 	  	</table>
 	</div>
-    <a th:href="@{/vistas/Empleados/create}"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
+    <a th:href="@{/vistas/Reserva/create}"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
 </body>
 </html>

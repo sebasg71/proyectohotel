@@ -11,18 +11,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 import com.hotel.modelo.Hospedaje;
 import com.hotel.modelo.Salida;
 import com.hotel.servicio.HospedajeServicio;
 import com.hotel.servicio.SalidaServicio;
 
 @Controller
-@RequestMapping("/vistas/Articulo")
+@RequestMapping("/vistas/Salidas")
 public class SalidaControlador {
 
     @Autowired
-    private  SalidaServicio salidaServicio;
+    private SalidaServicio salidaServicio;
     private HospedajeServicio hospedajeServicio;
 
     @GetMapping("/")
@@ -37,9 +36,9 @@ public class SalidaControlador {
 
         Salida salida = new Salida();
 
-        Iterable<Hospedaje>hospedaje=hospedajeServicio.findAll();
-        modelo.addAttribute("Titulo","salida");
-        
+        Iterable<Hospedaje> hospedaje = hospedajeServicio.findAll();
+        modelo.addAttribute("Titulo", "salida");
+
         modelo.addAttribute("Salida", salida);
         modelo.addAttribute("Titulo", hospedaje);
         return "/vistas/Hospedaje/hospedaje";

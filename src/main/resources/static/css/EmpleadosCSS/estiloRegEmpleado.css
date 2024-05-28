@@ -52,6 +52,18 @@ form {
     font-size: 16px;
 }
 
+.inputTree2 {
+    padding: 15px;
+    margin: -10px;
+    position: relative;
+    width: 150px;
+    left: 228px;
+    top: 65px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
 input::placeholder {
     font-size: 16px;
     color: black;
@@ -60,7 +72,7 @@ input::placeholder {
 .btnSave {
     z-index: 800;
     position: relative;
-    top: 50px;
+    top: 100px;
     left: 160px;
     background: #1346b6;
 	border: none;
@@ -76,7 +88,7 @@ input::placeholder {
 .btnCancel {
     z-index: 800;
     position: relative;
-    top: 17px;
+    top: 70px;
     left: 360px;
     background: #ca0e0e;
 	border: none;

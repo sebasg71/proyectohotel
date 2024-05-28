@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/HabitacionesCSS/estiloRegHabitacion.css}">
+    <title>Cliente</title>
+</head>
+<body>
+    <div>
+		<form th:action="@{/vistas/Habitaciones/save}" th:object="${Habitacion}" method="post">  
+			<h2 class="title">Registrar Habitacion</h2>
+			<div>
+				<input class="inputTree" type="text" id="identificacion" th:field="*{id_habitacion}" placeholder="Identificador"> 				
+			</div>
+			<div>
+				<input class="inputTwo" type="text" id="nombreArticulo" th:field="*{numeroHabitacion}" placeholder="Numero Habitacion"> 
+			</div>
+            <div>
+				<input class="inputOne" type="text" id="cantidad" th:field="*{tipoHabitacion}" placeholder="Tipo Habitacion"> 
+			</div>
+            <div>
+				<input class="inputTwo" type="text" id="descripcion" th:field="*{piso}" placeholder="Piso"> 
+			</div>
+			<div>
+				<input class="btnSave" type="submit" value="Guardar" id="submit" name="submit"/>
+			</div>
+			<div>
+				<a th:href="@{/vistas/Habitaciones/}" class="btnCancel">Cancelar</a>
+			</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/ReservaCSS/estiloRegReserva.css}">
+    <title>Cliente</title>
+</head>
+<body>
+    <div>
+		<form th:action="@{/vistas/Reserva/save}" th:object="${Reserva}" method="post">  
+			<h2 class="title">Registrar Articulo</h2>
+			<div>
+				<input class="inputTree" type="text" id="identificacion" th:field="*{id_reserva}" placeholder="Identificador"> 				
+			</div>
+			<div>
+				<input class="inputTwo" type="date" id="nombreArticulo" th:field="*{fechaReserva}" placeholder="Fecha Reserva"> 
+			</div>
+            <div>
+				<input class="inputOne" type="time" id="cantidad" th:field="*{horaReserva}" placeholder="Hora Reserva"> 
+			</div>
+            <div>
+                <select th:field="*{Cliente}" class="Select">
+                    <option >Cliente:</option>
+                    <option th:each="cliente : ${Cliente}" th:value="${cliente.id_cliente}" th:text="${cliente.primerNombre} +   ${cliente.primerApellido}"></option-->
+                </select>
+            </div>
+            <div>
+                <select th:field="*{Empleado}" class="Select">
+                    <option>Empleado:</option>
+                    <option th:each="empleado : ${Empleado}" th:value="${empleado.id_empleado}" th:text="${empleado.primerNombre} +   ${empleado.primerApellido}"></option>
+                </select>
+            </div>
+            <!--div>
+                <select th:field="*{Habitacion}" class="Select">
+                    <option >Habitacion:</option>
+                    <option th:each="habitacion : ${Habitacion}" th:value="${habitacion.idHabitacion}" th:text="${habitacion.numeroHabitacion} +   ${habitacion.tipoHabitacion}"></option   >
+                </select>
+            </div-->
+			
+            <div>
+                <input class="btnSave" type="submit" value="Guardar" id="submit" name="submit"/>
+            </div>    
+			<div>
+				<a th:href="@{/vistas/Reserva/}" class="btnCancel">Cancelar</a>
+			</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

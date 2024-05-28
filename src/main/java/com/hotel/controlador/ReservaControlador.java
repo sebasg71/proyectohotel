@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 import com.hotel.modelo.Cliente;
 import com.hotel.modelo.Empleado;
 import com.hotel.modelo.Habitacion;
@@ -21,17 +20,15 @@ import com.hotel.servicio.EmpleadoServicio;
 import com.hotel.servicio.HabitacionServicio;
 import com.hotel.servicio.ReservaServicio;
 
-
 @Controller
 @RequestMapping("/vistas/Reserva")
-public class ReservaControlador  {
+public class ReservaControlador {
 
     @Autowired
     private ReservaServicio reservaServicio;
     private HabitacionServicio habitacionServicio;
     private EmpleadoServicio empleadoServicio;
     private ClienteServicio clienteServicio;
-    
 
     public ReservaControlador(ReservaServicio reservaServicio, HabitacionServicio habitacionServicio,
             EmpleadoServicio empleadoServicio, ClienteServicio clienteServicio) {
@@ -53,18 +50,17 @@ public class ReservaControlador  {
 
         Reserva reserva = new Reserva();
 
-        Iterable<Habitacion>habitacion=habitacionServicio.findAll();
-        Iterable<Empleado>empleado=empleadoServicio.findAll();
-        Iterable<Cliente>cliente=clienteServicio.findAll();
+        Iterable<Habitacion> habitacion = habitacionServicio.findAll();
+        Iterable<Empleado> empleado = empleadoServicio.findAll();
+        Iterable<Cliente> cliente = clienteServicio.findAll();
         modelo.addAttribute("Titulo", "Reserva");
 
         modelo.addAttribute("Habitacion", habitacion);
         modelo.addAttribute("Empleado", empleado);
         modelo.addAttribute("Cliente", cliente);
         modelo.addAttribute("Reserva", reserva);
-        
-        
-        return "/vistas/Reserva/reserva";
+
+        return "/vistas/Reserva/registrarReserva";
     }
 
     @PostMapping("/save")
@@ -76,12 +72,12 @@ public class ReservaControlador  {
     }
 
     @GetMapping("/edit/{id}")
-    public String editar(@PathVariable("id") Long idreserva, Model modelo) {
+    public String editar(@PathVariable("id") Long id_Reserva, Model modelo) {
 
-     Reserva reserva = new Reserva();
+        Reserva reserva = new Reserva();
 
-        if (idreserva > 0) {
-            reserva = reservaServicio.buscarporId(idreserva);
+        if (id_Reserva > 0) {
+            reserva = reservaServicio.buscarporId(id_Reserva);
             if (reserva == null) {
                 return "redirect:/vistas/Reserva";
             }
@@ -95,12 +91,12 @@ public class ReservaControlador  {
     }
 
     @GetMapping("/delete/{id}")
-    public String eliminar(@PathVariable("id") long idreserva, Model modelo) {
+    public String eliminar(@PathVariable("id") long id_Reserva, Model modelo) {
 
         Reserva reserva = new Reserva();
 
-        if (idreserva > 0) {
-         reserva= reservaServicio.buscarporId(idreserva);
+        if (id_Reserva > 0) {
+            reserva = reservaServicio.buscarporId(id_Reserva);
             if (reserva == null) {
                 return "redirect:/vistas/Reserva";
             }
@@ -108,7 +104,7 @@ public class ReservaControlador  {
             return "redirect:/vistas/Reserva";
         }
 
-        reservaServicio.eliminar(idreserva);
+        reservaServicio.eliminar(id_Reserva);
         return "redirect:/vistas/Articulo/";
     }
 

@@ -7,7 +7,7 @@ import com.hotel.modelo.Habitacion;
 public interface HabitacionServicioImpl {
     List<Habitacion> findAll();
 
-    Habitacion save(Habitacion usuario);
+    Habitacion save(Habitacion habitacion);
 
     Habitacion buscarporId(Long id);
 
