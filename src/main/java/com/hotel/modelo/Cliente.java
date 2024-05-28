@@ -49,7 +49,7 @@ public class Cliente {
 	public Cliente() {
 	}
 
-	public long getId_cliente() {
+	public Long getId_cliente() {
 		return id_cliente;
 	}
 
@@ -105,7 +105,7 @@ public class Cliente {
 		this.direccion = direccion;
 	}
 
-	public long getTelefono() {
+	public Long getTelefono() {
 		return telefono;
 	}
 

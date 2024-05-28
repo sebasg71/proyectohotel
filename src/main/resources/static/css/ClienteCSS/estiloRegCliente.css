@@ -1,0 +1,58 @@
+* {
+    font-family: Calibri;
+}
+
+.title {
+    position: relative;
+    left: 220px;
+    font-size: 26px;
+}
+
+form {
+    width: 600px;
+    height: 500px;
+    border: 1px solid black;
+    left: 30%;
+    position: relative;
+    top: -2px;
+}
+
+.inputOne {
+    padding: 15px;
+    position: relative;
+    left: 370px;
+    width: 150px;
+    top: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.inputTwo {
+    padding: 15px;
+    margin: -10px;
+    position: relative;
+    width: 150px;
+    left: 70px;
+    top: 60px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.inputTree {
+    padding: 15px;
+    margin: -10px;
+    position: relative;
+    width: 150px;
+    left: 228px;
+    top: 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: black;
+}

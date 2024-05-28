@@ -2,46 +2,39 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+	<link rel="stylesheet" th:href="@{/css/ClienteCSS/estiloRegCliente.css}">
+    <title>Cliente</title>
 </head>
 <body>
     <div>
 		<form th:action="@{/vistas/Cliente/save}" th:object="${Cliente}" method="post">  
-			<div id="popUpContent">
-				<label for="identificacion">Identificación:</label> <br>
-				<input type="text" id="identificacion" th:field="*{id_cliente}" placeholder="Ingrese el Identificador"> 				
+			<h2 class="title">Registrar Cliente</h2>
+			<div>
+				<input class="inputTree" type="text" id="identificacion" th:field="*{id_cliente}" placeholder="Identificador"> 				
 			</div>
 			<div>
-				<label for="primerNombre">Primer Nombre:</label><br> 
-				<input type="text" id="primerNombre" th:field="*{primerNombre}" placeholder="Ingrese el primer Nombre"> 
+				<input class="inputTwo" type="text" id="primerNombre" th:field="*{primerNombre}" placeholder="Primer Nombre"> 
 			</div>
             <div>
-				<label for="segundoNombre">Segundo Nombre:</label><br> 
-				<input type="text" id="segundoNombre" th:field="*{segundoNombre}" placeholder="Ingrese el segundo Nombre"> 
+				<input class="inputOne" type="text" id="segundoNombre" th:field="*{segundoNombre}" placeholder="Segundo Nombre"> 
 			</div>
             <div>
-				<label for="primerApellido">Primer Apellido:</label><br> 
-				<input type="text" id="primerApellido" th:field="*{primerApellido}" placeholder="Ingrese el primer Apellido"> 
+				<input class="inputTwo" type="text" id="primerApellido" th:field="*{primerApellido}" placeholder="Primer Apellido"> 
 			</div>
             <div>
-				<label for="segundoNombre">Segundo Apellido:</label><br> 
-				<input type="text" id="segundoApellido" th:field="*{segundoApellido}" placeholder="Ingrese el segundo Apellido"> 
+				<input class="inputOne" type="text" id="segundoApellido" th:field="*{segundoApellido}" placeholder="Segundo Apellido"> 
 			</div>
             <div>
-				<label for="direccion">Direccion:</label><br> 
-				<input type="text" id="direccion" th:field="*{direccion}" placeholder="Ingrese la direccion"> 
+				<input class="inputTwo" type="text" id="direccion" th:field="*{direccion}" placeholder="Direccion"> 
 			</div>
             <div>
-				<label for="edad">Edad:</label><br> 
-				<input type="text" id="edad" th:field="*{edad}" placeholder="Ingrese la edad"> 
+				<input class="inputOne" type="text" id="edad" th:field="*{edad}" placeholder="Edad"> 
 			</div>
             <div>
-				<label for="genero">Genero:</label><br> 
-				<input type="text" id="genero" th:field="*{genero}" placeholder="Ingrese la genero"> 
+				<input class="inputTwo" type="text" id="genero" th:field="*{genero}" placeholder="Genero"> 
 			</div>
             <div>
-				<label for="telefono">Telefono:</label><br> 
-				<input type="text" id="telefono" th:field="*{telefono}" placeholder="Ingrese el Telefono"> 
+				<input class="inputOne" type="text" id="telefono" th:field="*{telefono}" placeholder="Telefono"> 
 			</div>
 			<div>
 				<input type="submit" value="Guardar" id="submit" name="submit"/>
