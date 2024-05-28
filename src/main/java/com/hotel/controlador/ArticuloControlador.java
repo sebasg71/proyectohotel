@@ -23,7 +23,7 @@ public class ArticuloControlador {
     @Autowired
     private ArticuloServicio articuloservicio;
     private HabitacionServicio habitacionServicio;
-    
+
 
     @GetMapping("/")
     public String listadoArticulo(Model modelo) {
@@ -37,11 +37,13 @@ public class ArticuloControlador {
 
         Articulo articulo = new Articulo();
 
-        Iterable<Habitacion> habitacion = habitacionServicio.findAll();
+        Iterable<Habitacion>habitacion=habitacionServicio.findAll();
         modelo.addAttribute("Titulo", "Articulo");
 
         modelo.addAttribute("Articulo", articulo);
+        modelo.addAttribute("Habitacion", habitacion);
         return "/vistas/Articulo/registrarArticulo";
+
     }
 
     @PostMapping("/save")
