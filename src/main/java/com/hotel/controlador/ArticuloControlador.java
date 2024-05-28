@@ -23,6 +23,7 @@ public class ArticuloControlador {
     @Autowired
     private ArticuloServicio articuloservicio;
     private HabitacionServicio habitacionServicio;
+    
 
     @GetMapping("/")
     public String listadoArticulo(Model modelo) {

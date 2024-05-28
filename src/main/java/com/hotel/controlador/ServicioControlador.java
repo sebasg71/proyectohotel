@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+import com.hotel.modelo.Hospedaje;
 import com.hotel.modelo.Servicio;
+import com.hotel.servicio.HospedajeServicio;
 import com.hotel.servicio.ServicioService;
 
 @Controller
@@ -21,6 +23,7 @@ public class ServicioControlador {
 
     @Autowired
     private  ServicioService servicioService;
+    private  HospedajeServicio hospedajeServicio;
 
     @GetMapping("/")
     public String listadoServicio(Model modelo) {
@@ -33,8 +36,11 @@ public class ServicioControlador {
     public String crear(Model modelo) {
 
         Servicio servicio = new Servicio();
+        Iterable<Hospedaje>hospedaje=hospedajeServicio.findAll();
         modelo.addAttribute("Titulo", "Servicio");
-        modelo.addAttribute("Servicio", servicio);
+
+        modelo.addAttribute("Servicio",servicio );
+        modelo.addAttribute("Hospedaje",hospedaje );
         return "/vistas/Servicio/servicio";
     }
 
