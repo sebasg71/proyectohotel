@@ -16,7 +16,7 @@ import com.hotel.modelo.Empleado;
 import com.hotel.servicio.EmpleadoServicio;
 
 @Controller
-@RequestMapping("/vistas/Empleados")
+@RequestMapping("/vistas/Empleado")
 public class EmpleadoControlador {
     @Autowired
     private EmpleadoServicio empleadoServicio;
@@ -25,7 +25,7 @@ public class EmpleadoControlador {
     public String listadoEmpleado(Model modelo) {
         List<Empleado> listadoEmpleado = empleadoServicio.findAll();
         modelo.addAttribute("Empleado", listadoEmpleado);
-        return "/vistas/Empleados/empleados";
+        return "/vistas/Empleado/empleado";
     }
 
     @GetMapping("/create")
@@ -79,7 +79,7 @@ public class EmpleadoControlador {
         }
 
         empleadoServicio.eliminar(idEmpleado);
-        return "redirect:/vistas/Empleados/";
+        return "redirect:/vistas/Empleado/";
     }
 
 }

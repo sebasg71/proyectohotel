@@ -12,29 +12,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hotel.modelo.Articulo;
+import com.hotel.modelo.Habitacion;
 import com.hotel.servicio.ArticuloServicio;
+import com.hotel.servicio.HabitacionServicio;
 
 @Controller
-@RequestMapping("/vistas/Articulos")
+@RequestMapping("/vistas/Articulo")
 public class ArticuloControlador {
 
     @Autowired
     private ArticuloServicio articuloservicio;
+    private HabitacionServicio habitacionServicio;
 
     @GetMapping("/")
     public String listadoArticulo(Model modelo) {
         List<Articulo> listadoarticulo = articuloservicio.findAll();
         modelo.addAttribute("Articulo", listadoarticulo);
-        return "/vistas/Articulos/articulos";
+        return "/vistas/Articulo/articulo";
     }
 
     @GetMapping("/create")
     public String crear(Model modelo) {
 
         Articulo articulo = new Articulo();
+
+        Iterable<Habitacion> habitacion = habitacionServicio.findAll();
         modelo.addAttribute("Titulo", "Articulo");
+
         modelo.addAttribute("Articulo", articulo);
-        return "/vistas/Articulos/registroArticulos";
+        return "/vistas/Articulo/registrarArticulo";
     }
 
     @PostMapping("/save")
@@ -53,15 +59,15 @@ public class ArticuloControlador {
         if (idArticulo > 0) {
             articulo = articuloservicio.buscarporId(idArticulo);
             if (articulo == null) {
-                return "redirect:/vistas/Articulos/";
+                return "redirect:/vistas/Articulo/";
             }
         } else {
-            return "redirect:/vistas/Articulos/";
+            return "redirect:/vistas/Articulo/";
         }
 
         modelo.addAttribute("Titulo", "Formulario: Editar Articulo");
         modelo.addAttribute("Articulo", articulo);
-        return "/vistas/Articulo/articulos";
+        return "/vistas/Articulo/registrarArticulo";
     }
 
     @GetMapping("/delete/{id}")
@@ -72,10 +78,10 @@ public class ArticuloControlador {
         if (idArticulo > 0) {
             articulo = articuloservicio.buscarporId(idArticulo);
             if (articulo == null) {
-                return "redirect:/vistas/Articulos/";
+                return "redirect:/vistas/Articulo/";
             }
         } else {
-            return "redirect:/vistas/Articulos/";
+            return "redirect:/vistas/Articulo/";
         }
 
         articuloservicio.eliminar(idArticulo);
