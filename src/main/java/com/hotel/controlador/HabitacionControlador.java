@@ -85,5 +85,5 @@ public class HabitacionControlador {
         habitacionServicio.eliminar(id_habitacion);
         return "redirect:/vistas/Habitacion/";
     }
-"holi"
+
 }

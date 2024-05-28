@@ -18,7 +18,7 @@ import com.hotel.servicio.HospedajeServicio;
 import com.hotel.servicio.SalidaServicio;
 
 @Controller
-@RequestMapping("/vistas/Articulo")
+@RequestMapping("/vistas/Salida")
 public class SalidaControlador {
 
     @Autowired

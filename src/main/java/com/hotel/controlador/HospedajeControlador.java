@@ -11,27 +11,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-import com.hotel.modelo.Habitacion;
 import com.hotel.modelo.Hospedaje;
 import com.hotel.modelo.Reserva;
-import com.hotel.servicio.HabitacionServicio;
 import com.hotel.servicio.HospedajeServicio;
 import com.hotel.servicio.ReservaServicio;
 
-
 @Controller
-@RequestMapping("/vistas/Habitacion")
+@RequestMapping("/vistas/Hospedaje")
 public class HospedajeControlador {
 
     @Autowired
     private ReservaServicio reservaServicio;
     private HospedajeServicio hospedajeServicio;
-    
 
     @GetMapping("/")
     public String listadoHabitacion(Model modelo) {
-        List<Hospedaje> listadoHopedaje= hospedajeServicio.findAll();
+        List<Hospedaje> listadoHopedaje = hospedajeServicio.findAll();
         modelo.addAttribute("Hospaje", listadoHopedaje);
         return "/vistas/Hospedaje/hospedaje";
     }
@@ -41,60 +36,58 @@ public class HospedajeControlador {
 
         Hospedaje hospedaje = new Hospedaje();
 
-        Iterable<Reserva>reserva=reservaServicio.findAll();
+        Iterable<Reserva> reserva = reservaServicio.findAll();
 
         modelo.addAttribute("Titulo", "Reserva");
-        
-        modelo.addAttribute("hospedaje", );
-        modelo.addAttribute("Habitacion", habitacion);
-        return "/vistas/Habitacion/habitacion";
+
+        modelo.addAttribute("hospedaje", hospedaje);
+        modelo.addAttribute("Reserva", reserva);
+        return "/vistas/Hospadaje/hospedaje";
     }
 
     @PostMapping("/save")
-    public String guardar(@ModelAttribute Habitacion habitacion, Model modelo) {
-        modelo.addAttribute("Titulo: ", "Habitacion");
-        modelo.addAttribute("Habitacion", habitacion);
-        habitacionServicio.save(habitacion);
-        return "redirect:/vistas/Habitacion/";
+    public String guardar(@ModelAttribute Hospedaje hospedaje, Model modelo) {
+        modelo.addAttribute("Titulo: ", "Hospedaje");
+        modelo.addAttribute("Hospedaje", hospedaje);
+        hospedajeServicio.save(hospedaje);
+        return "redirect:/vistas/Hospedaje/";
     }
 
     @GetMapping("/edit/{id}")
-    public String editar(@PathVariable("id") Long idhabitacion, Model modelo) {
+    public String editar(@PathVariable("id") Long id_hospedaje, Model modelo) {
 
-        Habitacion habitacion = new Habitacion();
+        Hospedaje hospedaje = new Hospedaje();
 
-        if (idhabitacion > 0) {
-            habitacion = habitacionServicio.buscarporId(idhabitacion);
-            if (habitacion == null) {
-                return "redirect:/vistas/Habitacion";
+        if (id_hospedaje > 0) {
+            hospedaje = hospedajeServicio.buscarporId(id_hospedaje);
+            if (hospedaje == null) {
+                return "redirect:/vistas/Hospedaje";
             }
         } else {
-            return "redirect:/vistas/Habitacion";
+            return "redirect:/vistas/Hospedaje";
         }
 
-        modelo.addAttribute("Titulo", "Habitacion");
-        modelo.addAttribute("Habitacion", habitacion);
-        return "/vistas/Habitacion/habitacion";
+        modelo.addAttribute("Titulo", "hospedaje");
+        modelo.addAttribute("Hospedaje", hospedaje);
+        return "/vistas/Hospedaje/hospedaje";
     }
 
     @GetMapping("/delete/{id}")
-    public String eliminar(@PathVariable("id") long id_habitacion, Model modelo) {
+    public String eliminar(@PathVariable("id") long id_hospedaje, Model modelo) {
 
-        Habitacion habitacion = new Habitacion();
+        Hospedaje hospedaje = new Hospedaje();
 
-        if (id_habitacion > 0) {
-            habitacion = habitacionServicio.buscarporId(id_habitacion);
-            if (habitacion == null) {
-                return "redirect:/vistas/Habitacion";
+        if (id_hospedaje > 0) {
+            hospedaje = hospedajeServicio.buscarporId(id_hospedaje);
+            if (hospedaje == null) {
+                return "redirect:/vistas/Hospedaje";
             }
         } else {
-            return "redirect:/vistas/Habitacion";
+            return "redirect:/vistas/Hospedaje";
         }
 
-        habitacionServicio.eliminar(id_habitacion);
-        return "redirect:/vistas/Habitacion/";
+        hospedajeServicio.eliminar(id_hospedaje);
+        return "redirect:/vistas/Hospedaje/";
     }
 
 }
-
-
