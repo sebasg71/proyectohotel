@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/ReservaCSS/estiloReserva.css}">
+    <link rel="stylesheet" th:href="@{/css/HospedajeCSS/estiloHospedaje.css}">
     <title>Hotel</title>
 </head>
 <body>
-	<div class="navBar">
+    <div class="navBar">
         <a href="#">
             <img class="empresaLogo" th:src="@{/Imagenes/logoHotel.jpg}">
         </a>
@@ -24,7 +24,7 @@
                         <a th:href="@{/vistas/Habitaciones/}">Habitaciones</a>
                     </div>
                 </li>
-                <li><a th:href="@{/vistas/Servicios/}">Servicios</a></li>
+                <li><a th:href="@{/vistas/Salida/}">Salida</a></li>
                 <li><a th:href="@{/vistas/Hospedaje/}">Hospedaje</a></li>
             </ul>
         </nav>
@@ -33,36 +33,37 @@
     <div class="imagenEmpresa">
 		<img class="logoEmpresa" th:src="@{/Imagenes/logoHotel.jpg}">
 	</div>
-    
+
     <div class="table-container">
 		<table>
 			<thead>
 		  	<tr>
                 <th scope="col">Id</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Hora</th>
-                <th scope="col">Nombre Cliente</th>
-                <th scope="col">Nombre Empleado</th>
+                <th scope="col">Reserva</th>
                 <th scope="col">Habitacion</th>
+                <th scope="col">Cuidad Domicilio</th>
+                <th scope="col">Motivo Hospedaje</th>
                 <th scope="col">Acciones</th>
 		  	</tr>
 			</thead>
 			<tbody>
-		  		<tr th:each="reservas : ${Reserva}">
-					<td th:text="${reservas.id_reserva}"></td>
-                    <td th:text="${reservas.fechaReserva}"></td>
-                    <td th:text="${reservas.horaReserva}"></td>
-                    <td th:text="${reservas.cliente.primerNombre}"></td>
-                    <td th:text="${reservas.empleado.primerNombre}"></td>
-                    <td th:text="${reservas.habitacion.numeroHabitacion}"></td>
+		  		<tr th:each="hospedaje : ${Hospedaje}">
+					<td th:text="${hospedaje.id_hospedaje}"></td>
+                    <td th:text="${hospedaje.reserva.id_reserva}"></td>
+                    <td th:text="${hospedaje.reserva.habitacion.numeroHabitacion}"></td>
+                    <td th:text="${hospedaje.ciudadDomicilio}"></td>
+                    <td th:text="${hospedaje.motivoHospedaje}"></td>
                     <td>
-                        <a><button type="submit" class="btnEditarForm" >Editar</button></a>
-                        <a><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
+                        <a th:href="@{/vistas/Hospedaje/edit/} + ${hospedaje.id_hospedaje}"><button type="submit" class="btnEditarForm" >Editar</button></a>
+                        <a th:href="@{/vistas/Hospedaje/delete/} + ${hospedaje.id_hospedaje}"><button type="submit" class="btnEliminarForm" >Eliminar</button></a>
                     </td>
 		  		</tr>
 			</tbody>
 	  	</table>
 	</div>
-    <a th:href="@{/vistas/Reserva/create}"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
+    <a th:href="@{/vistas/Hospedaje/create}"><button type="submit" class="btnRegistrarForm" >+ Agregar</button></a>
+
+
+
 </body>
 </html>

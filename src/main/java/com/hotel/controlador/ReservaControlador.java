@@ -105,7 +105,7 @@ public class ReservaControlador {
         }
 
         reservaServicio.eliminar(id_Reserva);
-        return "redirect:/vistas/Articulo/";
+        return "redirect:/vistas/Reserva/";
     }
 
 }

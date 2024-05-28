@@ -1,0 +1,128 @@
+* {
+    font-family: Calibri;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    font-size: 26px;
+}
+
+form {
+    width: 600px;
+    height: 580px;
+    border: 1px solid rgba(207, 207, 207, 0.651);
+    left: 30%;
+    position: relative;
+    top: -2px;
+}
+
+.inputOne {
+    padding: 15px;
+    position: relative;
+    left: 360px;
+    width: 150px;
+    top: 105px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.inputTwo {
+    padding: 15px;
+    margin: -10px;
+    position: relative;
+    width: 150px;
+    left: 70px;
+    top: 60px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.inputTree {
+    padding: 15px;
+    margin: -10px;
+    position: relative;
+    width: 150px;
+    left: 370px;
+    top: 90px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: black;
+}
+
+.btnSave {
+    z-index: 800;
+    position: relative;
+    top: 100px;
+    left: 160px;
+    background: #1346b6;
+	border: none;
+	border-radius: 8px;
+	outline: none;
+	cursor: pointer;
+	font-size: 17px; 	
+	color: #ffffff;
+    width: 80px;
+	height: 40px;
+}
+
+.btnCancel {
+    z-index: 800;
+    position: relative;
+    top: 70px;
+    left: 360px;
+    background: #ca0e0e;
+	border: none;
+	border-radius: 8px;
+	outline: none;
+	cursor: pointer;
+	font-size: 17px; 	
+	color: #ffffff;
+    width: 100px;
+	height: 50px;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Select1 {
+    padding: 13px;
+    position: relative;
+    left: 60px;
+    width: 183px;
+    top: 50px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.Select2 {
+    padding: 13px;
+    position: relative;
+    left: 60px;
+    width: 183px;
+    top: 90px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.Select3 {
+    padding: 13px;
+    position: relative;
+    left: 360px;
+    width: 183px;
+    top: 40px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 18px;
+}

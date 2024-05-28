@@ -16,7 +16,7 @@ import com.hotel.modelo.Habitacion;
 import com.hotel.servicio.HabitacionServicio;
 
 @Controller
-@RequestMapping("/vistas/Habitacion")
+@RequestMapping("/vistas/Habitaciones")
 public class HabitacionControlador {
 
     @Autowired
@@ -27,7 +27,7 @@ public class HabitacionControlador {
     public String listadoHabitacion(Model modelo) {
         List<Habitacion> listadoHabitacion = habitacionServicio.findAll();
         modelo.addAttribute("Habitacion", listadoHabitacion);
-        return "/vistas/Habitacion/habitacion";
+        return "/vistas/Habitaciones/habitaciones";
     }
 
     @GetMapping("/create")
@@ -38,7 +38,7 @@ public class HabitacionControlador {
         modelo.addAttribute("Titulo", "Habitacion");
 
         modelo.addAttribute("Habitacion", habitacion);
-        return "/vistas/Habitacion/habitacion";
+        return "/vistas/Habitaciones/registroHabitacion";
     }
 
     @PostMapping("/save")
@@ -46,7 +46,7 @@ public class HabitacionControlador {
         modelo.addAttribute("Titulo: ", "Habitacion");
         modelo.addAttribute("Habitacion", habitacion);
         habitacionServicio.save(habitacion);
-        return "redirect:/vistas/Habitacion/";
+        return "redirect:/vistas/Habitaciones/";
     }
 
     @GetMapping("/edit/{id}")
@@ -57,15 +57,15 @@ public class HabitacionControlador {
         if (id_habitacion > 0) {
             habitacion = habitacionServicio.buscarporId(id_habitacion);
             if (habitacion == null) {
-                return "redirect:/vistas/Habitacion";
+                return "redirect:/vistas/Habitaciones";
             }
         } else {
-            return "redirect:/vistas/Habitacion";
+            return "redirect:/vistas/Habitaciones";
         }
 
         modelo.addAttribute("Titulo", "Habitacion");
         modelo.addAttribute("Habitacion", habitacion);
-        return "/vistas/Habitacion/habitacion";
+        return "/vistas/Habitaciones/registroHabitacion";
     }
 
     @GetMapping("/delete/{id}")
@@ -76,14 +76,14 @@ public class HabitacionControlador {
         if (id_habitacion > 0) {
             habitacion = habitacionServicio.buscarporId(id_habitacion);
             if (habitacion == null) {
-                return "redirect:/vistas/Habitacion";
+                return "redirect:/vistas/Habitaciones";
             }
         } else {
-            return "redirect:/vistas/Habitacion";
+            return "redirect:/vistas/Habitaciones";
         }
 
         habitacionServicio.eliminar(id_habitacion);
-        return "redirect:/vistas/Habitacion/";
+        return "redirect:/vistas/Habitaciones/";
     }
 
 }

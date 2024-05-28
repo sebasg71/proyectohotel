@@ -18,7 +18,7 @@ import jakarta.persistence.Table;
 public class Hospedaje {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_hospedaje;
+	private Long id_hospedaje;
 
 	@Column(name = "ciudad_domicilio")
 	private String ciudadDomicilio;
@@ -47,11 +47,11 @@ public class Hospedaje {
 	@JoinColumn(name = "idReserva")
 	private Reserva reserva;
 
-	public long getId_hospedaje() {
+	public Long getId_hospedaje() {
 		return id_hospedaje;
 	}
 
-	public void setId_hospedaje(long id_hospedaje) {
+	public void setId_hospedaje(Long id_hospedaje) {
 		this.id_hospedaje = id_hospedaje;
 	}
 

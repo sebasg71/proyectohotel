@@ -17,16 +17,17 @@ import com.hotel.servicio.HospedajeServicio;
 import com.hotel.servicio.SalidaServicio;
 
 @Controller
-<<<<<<< HEAD
-@RequestMapping("/vistas/Salidas")
-=======
 @RequestMapping("/vistas/Salida")
->>>>>>> 20457c6d06bafcd3194eb9148745dc6371cccba3
 public class SalidaControlador {
 
     @Autowired
     private SalidaServicio salidaServicio;
     private HospedajeServicio hospedajeServicio;
+
+    public SalidaControlador(SalidaServicio salidaServicio, HospedajeServicio hospedajeServicio) {
+        this.salidaServicio = salidaServicio;
+        this.hospedajeServicio = hospedajeServicio;
+    }
 
     @GetMapping("/")
     public String listadosalida(Model modelo) {
@@ -44,8 +45,8 @@ public class SalidaControlador {
         modelo.addAttribute("Titulo", "salida");
 
         modelo.addAttribute("Salida", salida);
-        modelo.addAttribute("Titulo", hospedaje);
-        return "/vistas/Hospedaje/hospedaje";
+        modelo.addAttribute("Hospedaje", hospedaje);
+        return "/vistas/Salida/registrarSalida";
     }
 
     @PostMapping("/save")
@@ -72,7 +73,7 @@ public class SalidaControlador {
 
         modelo.addAttribute("Titulo", "Salida");
         modelo.addAttribute("Salida", salida);
-        return "/vistas/Salida/salida";
+        return "/vistas/Salida/registrarSalida";
     }
 
     @GetMapping("/delete/{id}")

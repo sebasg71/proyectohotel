@@ -8,7 +8,7 @@
 <body>
     <div>
 		<form th:action="@{/vistas/Reserva/save}" th:object="${Reserva}" method="post">  
-			<h2 class="title">Registrar Articulo</h2>
+			<h2 class="title">Registrar Reserva</h2>
 			<div>
 				<input class="inputTree" type="text" id="identificacion" th:field="*{id_reserva}" placeholder="Identificador"> 				
 			</div>
@@ -19,23 +19,20 @@
 				<input class="inputOne" type="time" id="cantidad" th:field="*{horaReserva}" placeholder="Hora Reserva"> 
 			</div>
             <div>
-                <select th:field="*{Cliente}" class="Select">
-                    <option >Cliente:</option>
-                    <option th:each="cliente : ${Cliente}" th:value="${cliente.id_cliente}" th:text="${cliente.primerNombre} +   ${cliente.primerApellido}"></option-->
+                <select th:field="*{Cliente}" class="Select1">
+                    <option th:each="cliente : ${Cliente}" th:value="${cliente.id_cliente}" th:text="${cliente.primerNombre} +   ${cliente.primerApellido}"></option>
                 </select>
             </div>
             <div>
-                <select th:field="*{Empleado}" class="Select">
-                    <option>Empleado:</option>
+                <select th:field="*{Empleado}" class="Select2">
                     <option th:each="empleado : ${Empleado}" th:value="${empleado.id_empleado}" th:text="${empleado.primerNombre} +   ${empleado.primerApellido}"></option>
                 </select>
             </div>
-            <!--div>
-                <select th:field="*{Habitacion}" class="Select">
-                    <option >Habitacion:</option>
-                    <option th:each="habitacion : ${Habitacion}" th:value="${habitacion.idHabitacion}" th:text="${habitacion.numeroHabitacion} +   ${habitacion.tipoHabitacion}"></option   >
+            <div>
+                <select th:field="*{Habitacion}" class="Select3">
+                    <option th:each="habitacion : ${Habitacion}" th:value="${habitacion.id_habitacion}" th:text="${habitacion.numeroHabitacion} +   ${habitacion.tipoHabitacion}"></option   >
                 </select>
-            </div-->
+            </div>
 			
             <div>
                 <input class="btnSave" type="submit" value="Guardar" id="submit" name="submit"/>

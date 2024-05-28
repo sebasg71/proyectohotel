@@ -1,9 +1,5 @@
 package com.hotel.controlador;
 
-<<<<<<< HEAD
-public class HospedajeControlador {
-
-=======
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +24,15 @@ public class HospedajeControlador {
     private ReservaServicio reservaServicio;
     private HospedajeServicio hospedajeServicio;
 
+    public HospedajeControlador(ReservaServicio reservaServicio, HospedajeServicio hospedajeServicio) {
+        this.reservaServicio = reservaServicio;
+        this.hospedajeServicio = hospedajeServicio;
+    }
+
     @GetMapping("/")
     public String listadoHabitacion(Model modelo) {
         List<Hospedaje> listadoHopedaje = hospedajeServicio.findAll();
-        modelo.addAttribute("Hospaje", listadoHopedaje);
+        modelo.addAttribute("Hospedaje", listadoHopedaje);
         return "/vistas/Hospedaje/hospedaje";
     }
 
@@ -44,9 +45,9 @@ public class HospedajeControlador {
 
         modelo.addAttribute("Titulo", "Reserva");
 
-        modelo.addAttribute("hospedaje", hospedaje);
+        modelo.addAttribute("Hospedaje", hospedaje);
         modelo.addAttribute("Reserva", reserva);
-        return "/vistas/Hospadaje/hospedaje";
+        return "/vistas/Hospedaje/registrarHospedaje";
     }
 
     @PostMapping("/save")
@@ -65,15 +66,15 @@ public class HospedajeControlador {
         if (id_hospedaje > 0) {
             hospedaje = hospedajeServicio.buscarporId(id_hospedaje);
             if (hospedaje == null) {
-                return "redirect:/vistas/Hospedaje";
+                return "redirect:/vistas/Hospedaje/";
             }
         } else {
-            return "redirect:/vistas/Hospedaje";
+            return "redirect:/vistas/Hospedaje/";
         }
 
         modelo.addAttribute("Titulo", "hospedaje");
         modelo.addAttribute("Hospedaje", hospedaje);
-        return "/vistas/Hospedaje/hospedaje";
+        return "/vistas/Hospedaje/registrarHospedaje";
     }
 
     @GetMapping("/delete/{id}")
@@ -84,15 +85,13 @@ public class HospedajeControlador {
         if (id_hospedaje > 0) {
             hospedaje = hospedajeServicio.buscarporId(id_hospedaje);
             if (hospedaje == null) {
-                return "redirect:/vistas/Hospedaje";
+                return "redirect:/vistas/Hospedaje/";
             }
         } else {
-            return "redirect:/vistas/Hospedaje";
+            return "redirect:/vistas/Hospedaje/";
         }
 
         hospedajeServicio.eliminar(id_hospedaje);
         return "redirect:/vistas/Hospedaje/";
     }
-
->>>>>>> 20457c6d06bafcd3194eb9148745dc6371cccba3
 }

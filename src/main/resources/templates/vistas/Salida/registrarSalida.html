@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/ReservaCSS/estiloRegReserva.css}">
+    <title>Cliente</title>
+</head>
+<body>
+    <div>
+		<form th:action="@{/vistas/Salida/save}" th:object="${Salida}" method="post">  
+			<h2 class="title">Registrar Hospedaje</h2>
+			<div>
+				<input class="inputTree" type="text" id="identificacion" th:field="*{id_salida}" placeholder="Identificador"> 				
+			</div>
+			<div>
+				<input class="inputTwo" type="date" id="nombreArticulo" th:field="*{fechaSalida}" placeholder="Fecha Salida"> 
+			</div>
+            <div>
+                <select th:field="*{Hospedaje}" class="Select2">
+                    <option th:each="hospedaje : ${Hospedaje}" th:value="${hospedaje.id_hospedaje}" th:text="${hospedaje.id_hospedaje} + ${hospedaje.reserva.habitacion.numeroHabitacion}"></option>
+                </select>
+            </div>
+            <div>
+                <input class="btnSave" type="submit" value="Guardar" id="submit" name="submit"/>
+            </div>    
+			<div>
+				<a th:href="@{/vistas/Salida/}" class="btnCancel">Cancelar</a>
+			</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,5 +1,7 @@
 package com.hotel.modelo;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,28 +17,28 @@ public class Salida {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_salida;
+    private Long id_salida;
 
     @Column(name = "fecha_salida")
-    private long fechaSalida;
+    private LocalDate fechaSalida;
 
     @ManyToOne
     @JoinColumn(name = "id_hospedaje")
     private Hospedaje hospedaje;
 
-    public long getId_salida() {
+    public Long getId_salida() {
         return id_salida;
     }
 
-    public void setId_salida(long id_salida) {
+    public void setId_salida(Long id_salida) {
         this.id_salida = id_salida;
     }
 
-    public long getFechaSalida() {
+    public LocalDate getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(long fechaSalida) {
+    public void setFechaSalida(LocalDate fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
